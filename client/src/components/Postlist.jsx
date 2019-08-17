@@ -30,8 +30,9 @@ class PostList extends Component {
   render() {
     return (
       <div>
-        PostList Component
+        PostList Component test
         {this.renderPosts()}
+        <hr></hr>
         <Link to="/posts/new">Add a New Post</Link>
       </div>
     )
