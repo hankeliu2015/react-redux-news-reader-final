@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import PostList from './components/PostList';
 import './App.css';
+import NewPost from './components/NewPost'
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         </header>
 
         <Route exact path="/" component={PostList} />
+        <Route exat path="/posts/new" component={NewPost} />
       </div>
     </Router>
   );
