@@ -15,9 +15,31 @@ class NewPost extends Component {
     });
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    let data = {post: this.state};
+    let token = document.querySelector('meta[name="csrf-token"]').content;
+    fetch('/api/v1/posts', {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        'X-Requested-With': 'XMLHttpRequest',
+        'X-CSRF-Token': token
+      },
+      redirect: "error",
+      body: JSON.stringify(data)
+    })
+      .then(resp => {
+        resp.json()
+      })
+      .then(post => {
+        this.props.history.push('/');
+      });
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <p>
           <label htmlFor="title">Title: </label>
           <input type="text" name="title" onChange={this.handleChange} />
