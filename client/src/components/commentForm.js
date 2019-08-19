@@ -29,9 +29,9 @@ class CommentForm extends Component {
           <br></br>
           <textarea value={this.state.comment} name="story_comment" rows="5" cols="60" onChange={this.handleOnChange}></textarea>
           <br></br>
-          <label>Author</label>
+          <label>User</label>
           <br></br>
-          <input type='text' value="do not enter" name="author" onChange={this.handleOnChange}></input>
+          <input type='text' value="Replaced by Devise User" name="user" onChange={this.handleOnChange}></input>
           <br></br>
           <button type="submit">Submit</button>
         </form>
