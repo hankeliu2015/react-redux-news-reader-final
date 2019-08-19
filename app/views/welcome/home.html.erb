@@ -8,5 +8,6 @@
   <% end %>
 </nav>
 
-<h1>Welcome#home</h1>
+<h1>Welcome To NewsReader </h1>
+<h4><%= "Hello " + "#{current_user.email}" if current_user %></h4>
 <p>If you're logged in, check out <%= link_to "the app", app_path %>!</p>
