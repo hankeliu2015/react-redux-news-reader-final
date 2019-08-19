@@ -29,8 +29,8 @@ function App() {
           </a>
         </header>
 
-        <Route exact path="/" component={StoriesContainer} />
         // <Route exact path="/" component={PostList} />
+        <Route exact path="/" component={StoriesContainer} />
         <Route exat path="/posts/new" component={NewPost} />
       </div>
     </Router>
