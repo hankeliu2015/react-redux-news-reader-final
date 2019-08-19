@@ -9,6 +9,8 @@ import './App.css';
 import NewPost from './components/NewPost';
 
 import StoriesContainer from './containers/storiescontainer';
+import StoryComments from './containers/storycomments';
+
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
 
         // <Route exact path="/" component={PostList} />
         <Route exact path="/" component={StoriesContainer} />
+        <Route exact path='/storycomments/:id' component={StoryComments} />
+
         <Route exat path="/posts/new" component={NewPost} />
       </div>
     </Router>
