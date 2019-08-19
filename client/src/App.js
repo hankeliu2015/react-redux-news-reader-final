@@ -6,7 +6,9 @@ import {
 } from 'react-router-dom';
 import PostList from './components/PostList';
 import './App.css';
-import NewPost from './components/NewPost'
+import NewPost from './components/NewPost';
+
+import StoriesContainer from './containers/storiescontainer';
 
 function App() {
   return (
@@ -27,7 +29,8 @@ function App() {
           </a>
         </header>
 
-        <Route exact path="/" component={PostList} />
+        <Route exact path="/" component={StoriesContainer} />
+        // <Route exact path="/" component={PostList} />
         <Route exat path="/posts/new" component={NewPost} />
       </div>
     </Router>
