@@ -12,7 +12,7 @@ class Comments extends Component {
 
     // const storyComments = this.props.comments.filter(comment => parseInt(comment.story_id) ===  this.props.storyId)
     //
-   const displayComments = this.props.storyComments.map((comment, index) => <li key={index}>{comment.story_comment} created at: {comment.created_at}</li>)
+   const displayComments = this.props.storyComments.map((comment, index) => <li key={index}>{comment.story_comment} User: {comment.user.email} created at: {comment.created_at}</li>)
 
 // debugger
     return (
