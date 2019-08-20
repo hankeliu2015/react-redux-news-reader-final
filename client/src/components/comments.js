@@ -14,11 +14,11 @@ class Comments extends Component {
     //
    const displayComments = this.props.storyComments.map((comment, index) => {
      let commentDate = new Date(comment.created_at);
-     let dateString = commentDate.toDateString();
+     let dateString = commentDate.toLocaleTimeString();
      return (
        <li key={index}>
          Story: {comment.story_comment}
-         User: {comment.user.email}
+         User: {comment.user.email};
          Created at: {dateString}
        </li>
      )
