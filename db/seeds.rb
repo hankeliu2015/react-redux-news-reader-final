@@ -25,4 +25,4 @@
   #   user.posts.create(post_hash)
   # end
 
-  Comment.create(story_id: "123456", story_comment:"This comment created in seed file", story_score: 10, user_id: 1123456)
+  # Comment.create(story_id: "123456", story_comment:"This comment created in seed file", story_score: 10, user_id: 1)
