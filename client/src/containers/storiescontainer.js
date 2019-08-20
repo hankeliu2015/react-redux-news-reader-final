@@ -29,6 +29,7 @@ class StoriesContainer extends Component {
     // debugger
 
     return (
+
       <div>
         <StoriesList list={list} loading={this.props.loading} />
       </div>
