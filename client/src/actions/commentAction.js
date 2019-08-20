@@ -1,4 +1,4 @@
-export function commentUpload(storyComment) {
+export function commentUpload(storyComment, valueCSRF) {
 
   return dispatch => {
     dispatch({type: 'UPLOADING_COMMENT'});
@@ -9,7 +9,7 @@ export function commentUpload(storyComment) {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
-        // 'X-CSRF-Token': valueCSRF
+        'X-CSRF-Token': valueCSRF
       },
       body: JSON.stringify(storyComment),
       // credentials: 'same-origin'  //might not need this.

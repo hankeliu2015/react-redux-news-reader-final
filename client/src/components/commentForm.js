@@ -18,7 +18,9 @@ class CommentForm extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.commentUpload(this.state)
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+    debugger
+    this.props.commentUpload(this.state, valueCSRF)
   }
 
   render() {
