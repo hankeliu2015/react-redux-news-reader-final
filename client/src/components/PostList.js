@@ -6,7 +6,7 @@ export default function postList(props) {
       <div>
 
       <h4>Your story is successfully published:</h4>
-      {props.loading ? "...Posts Loading" : props.userPosts}
+      {props.userPosts}
 
       <h5>Please check other authors published story:</h5>
       {props.loading ? "...Posts Loading" : props.posts}

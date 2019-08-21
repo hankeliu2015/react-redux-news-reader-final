@@ -12,9 +12,16 @@ class Posts extends Component {
 
   render() {
 
-    const userPosts = this.props.userPosts.map((post, index) => <li key={post.id}>{post.content} Created at: {post.created_at}</li>)
+    const userPosts = this.props.userPosts.map((post, index) => <li key={post.id}>Title: {post.title}; Content: {post.content} Created at: {post.created_at}</li>)
 
-    const posts = this.props.posts.map((post, index) => <li key={post.id}>{post.content} Created at: {post.created_at}</li>)
+    const posts = this.props.posts.map((post, index) => {
+      let postDate = new Date(post.created_at)
+      let dateString = postDate.toDateString()
+
+      return(
+        <li key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString}</li>
+      )
+    })
 
     return (
       <div>
