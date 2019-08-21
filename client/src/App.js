@@ -11,6 +11,7 @@ import NewPostTutorial from './components/NewPostTutorial';
 import StoriesContainer from './containers/storiescontainer';
 import StoryComments from './containers/storycomments';
 import Navbar from './components/navbar';
+import Posts from './containers/Posts'
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
 
         // <Route exact path="/" component={PostListTutorial} />
         <Route exact path="/" component={StoriesContainer} />
+        <Route exact path="/posts" component={Posts} />
+
         <Route exact path='/storycomments/:id' component={StoryComments} />
 
         <Route exat path="/posts/new" component={NewPostTutorial} />
