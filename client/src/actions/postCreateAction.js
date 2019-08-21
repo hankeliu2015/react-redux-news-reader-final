@@ -2,12 +2,12 @@ export function postUpload(postData, valueCSRF) {
   return dispatch => {
     dispatch({type: 'LOADING_POST'});
     return (
-      fetch('http://localhost:3001/api/v1/posts', {
+      fetch('http://localhost:3000/api/v1/posts', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
-          'X-CSRF-Token': valueCSR
+          'X-CSRF-Token': valueCSRF
         },
         body: JSON.stringify(postData),
       })
