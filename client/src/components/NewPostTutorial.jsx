@@ -1,6 +1,6 @@
 import React, { Component }               from 'react';
 
-class NewPost extends Component {
+class NewPostTutorial extends Component {
 
   state = {
     title: '',
@@ -54,4 +54,4 @@ class NewPost extends Component {
   }
 }
 
-export default NewPost
+export default NewPostTutorial

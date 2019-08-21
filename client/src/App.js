@@ -6,16 +6,18 @@ import {
 } from 'react-router-dom';
 import PostList from './components/PostList';
 import './App.css';
-import NewPost from './components/NewPost';
+import NewPostTutorial from './components/NewPostTutorial';
 
 import StoriesContainer from './containers/storiescontainer';
 import StoryComments from './containers/storycomments';
-
+import Navbar from './components/navbar';
 
 function App() {
   return (
     <Router>
       <div className="App">
+        <Navbar />
+        <br></br>
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -35,7 +37,7 @@ function App() {
         <Route exact path="/" component={StoriesContainer} />
         <Route exact path='/storycomments/:id' component={StoryComments} />
 
-        <Route exat path="/posts/new" component={NewPost} />
+        <Route exat path="/posts/new" component={NewPostTutorial} />
       </div>
     </Router>
   );
