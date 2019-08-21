@@ -37,11 +37,11 @@ class NewPost extends Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
         <h4>Publishing your own story: </h4>
-          <br></br>
           <label>Title</label>
           <br></br>
           <input type="text" name="title" onChange={this.handleOnChange} value={this.state.title}></input>
 
+          <br></br>
           <label>Post Content</label>
           <br></br>
           <textarea rows="5" cols="60" name="content" onChange={this.handleOnChange} value={this.state.content}></textarea>
