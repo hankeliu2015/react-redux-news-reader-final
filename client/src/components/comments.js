@@ -17,7 +17,7 @@ class Comments extends Component {
      let dateString = commentDate.toLocaleTimeString();
      return (
        <li key={index}>
-         Story: {comment.story_comment}
+         Comment: {comment.story_comment}
          User: {comment.user.email};
          Created at: {dateString}
        </li>
