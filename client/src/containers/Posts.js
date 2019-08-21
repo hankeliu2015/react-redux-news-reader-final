@@ -11,14 +11,15 @@ class Posts extends Component {
   }
 
   render() {
-    const userPosts = this.props.userPosts.map((post, index) => <li key={post.id}>{post.content} Created at: {post.created_at}</li>)
+
+    // const userPosts = this.props.userPosts.map((post, index) => <li key={post.id}>{post.content} Created at: {post.created_at}</li>)
 
     const posts = this.props.posts.map((posts, index) => <li key={post.id}>{post.content} Created at: {post.created_at}</li>)
 
     return (
       <div>
           <PostForm />
-          <PostList userPosts={userPosts} posts={posts} />
+          <PostList posts={posts} loading={this.props.loading} />
       </div>
     )
   }
@@ -27,7 +28,8 @@ class Posts extends Component {
 const mapStateToProps = state => {
   return {
     userPosts: state.storyReducer.userPosts,
-    posts: state.storyReducer.posts
+    posts: state.storyReducer.posts,
+    loading: state.storyReducer.loading
   }
 }
 
