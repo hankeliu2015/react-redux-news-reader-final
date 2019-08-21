@@ -3,7 +3,7 @@ import React from 'react'
 export default function StoryShow(props) {
 
   if (props.story.time) {
-    let storyTime = new Date(props.story.time);
+    let storyTime = new Date(props.story.time * 1000);
     let timeString = storyTime.toLocaleString();
 
     return (
