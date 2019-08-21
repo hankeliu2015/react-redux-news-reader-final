@@ -1,4 +1,4 @@
-export function postUpload(postData) {
+export function postUpload(postData, valueCSRF) {
   return dispatch => {
     dispatch({type: 'LOADING_POST'});
     return (
@@ -7,6 +7,7 @@ export function postUpload(postData) {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'X-CSRF-Token': valueCSR
         },
         body: JSON.stringify(postData),
       })
