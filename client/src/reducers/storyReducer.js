@@ -7,11 +7,11 @@ export default function storyReducer(state={userPosts:[], posts:[], stories: [],
     case 'FETCHING_STORIES':
       return {...state, stories: [...state.stories, action.payload], loading: false};
 
-    case 'LOADING_AUTHORCREATEDSTORY':
+    case 'LOADING_POST':
       return {...state, loading:true};
 
-    case 'ADDING_AUTHORCREATEDSTORY':   // will show it on the page when author is writing. as confirmation the story is published.
-      return {...state, authorStories: [...state.authorStories, action.payload], loading:false};
+    case 'ADDING_POST':   // will show it on the page when author is writing. as confirmation the story is published.
+      return {...state, userPosts: [...state.userPosts, action.payload], loading:false};
 
     case 'FETCHING_POSTS':  //might have the fetching and loading opposite
       return {...state, loading:true};
