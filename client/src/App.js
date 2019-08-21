@@ -4,7 +4,7 @@ import {
   HashRouter as Router,
   Route
 } from 'react-router-dom';
-import PostList from './components/PostList';
+import PostListTutorial from './components/PostListTutorial';
 import './App.css';
 import NewPostTutorial from './components/NewPostTutorial';
 
@@ -33,7 +33,7 @@ function App() {
           </a>
         </header>
 
-        // <Route exact path="/" component={PostList} />
+        // <Route exact path="/" component={PostListTutorial} />
         <Route exact path="/" component={StoriesContainer} />
         <Route exact path='/storycomments/:id' component={StoryComments} />
 

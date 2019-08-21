@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 
-class PostList extends Component {
+class PostListTutorial extends Component {
 
   state = {
     posts: []
@@ -39,4 +39,4 @@ class PostList extends Component {
   }
 }
 
-export default PostList
+export default PostListTutorial
