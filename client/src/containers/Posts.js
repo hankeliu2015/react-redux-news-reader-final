@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PostForm from '../components/PostForm';
+import NewPost from '../components/newPost';
 import PostList from '../components/PostList';
 import { connect } from 'react-redux';
 import fetchPosts from '../actions/postsFetchAction'
@@ -25,7 +25,7 @@ class Posts extends Component {
 
     return (
       <div>
-        <PostForm />
+        <NewPost />
         <PostList posts={posts} userPosts={userPosts} loading={this.props.loading} />
       </div>
     )
