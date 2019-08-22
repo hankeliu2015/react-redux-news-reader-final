@@ -1,18 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Comments extends Component {
-
-  render(){
-
+export default function comments(props)  {
     return (
       <div>
         <h4>Comments - current user and other users's comment(s) fetched from Database</h4>
         <ul>
-          {this.props.displayComments}
+          {props.displayComments}
         </ul>
       </div>
     )
-  }
 }
-
-export default Comments
