@@ -23,7 +23,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Please add your comments or post your own stories.
+            Welcome to News Feed from Hacker News. Please add your comments or post your own stories.
           </p>
 
         </header>
