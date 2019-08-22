@@ -31,7 +31,7 @@ function App() {
         <Container>
           <Route exact path="/" component={Stories} />
           <Route exact path="/posts" component={Posts} />
-          <Route exact path='/comments/:id' component={Comments} /> //:id is story_id of the comment
+          <Route exact path='/comments/:id' component={Comments} />   {/* :id is story_id of the comment */} 
         </Container>
 
       </div>
