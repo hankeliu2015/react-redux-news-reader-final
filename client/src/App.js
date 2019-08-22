@@ -34,13 +34,10 @@ function App() {
           </a>
         </header>
 
-        // <Route exact path="/" component={PostListTutorial} />
         <Route exact path="/" component={StoriesContainer} />
         <Route exact path="/posts" component={Posts} />
-
         <Route exact path='/storycomments/:id' component={StoryComments} />
-
-        <Route exat path="/posts/new" component={NewPostTutorial} />
+        
       </div>
     </Router>
   );
