@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NewComment from '../components/NewComment';
-import Comments from '../components/comments';
+import CommentList from '../components/commentList';
 import StoryShow from '../components/storyShow';
 import { connect } from 'react-redux';
 import { fetchSingleStory } from '../actions/singleStoryAction';
@@ -40,7 +40,7 @@ class StoryComments extends Component {
           <hr></hr>
           <NewComment storyId={story.id} />
           <hr></hr>
-          <Comments storyComments={storyComments} displayComments={displayComments} />
+          <CommentList storyComments={storyComments} displayComments={displayComments} />
           <hr></hr>
         </div>
       )
