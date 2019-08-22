@@ -4,14 +4,6 @@ import { postUpload } from '../actions/postCreateAction';
 // import Button from 'react-bootstrap/Button';
 // import Form from 'react-bootstrap/Form'
 
-// export default function newPost(props) {
-//
-//     return (
-//       <div>
-//         <p>Work in progress - will import authorStoryForm from Previous work</p>
-//       </div>
-//     )
-// }
 
 class NewPost extends Component {
   state = {
