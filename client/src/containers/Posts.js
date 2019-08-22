@@ -19,7 +19,7 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
-        <li key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString}</li>
+        <li key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString} By: {post.user.email}</li>
       )
     })
 
