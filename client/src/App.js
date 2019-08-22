@@ -8,7 +8,7 @@ import PostListTutorial from './components/PostListTutorial';
 import './App.css';
 import NewPostTutorial from './components/NewPostTutorial';
 
-import StoriesContainer from './containers/storiescontainer';
+import Stories from './containers/Stories';
 import StoryComments from './containers/storycomments';
 import Navbar from './components/navbar';
 import Posts from './containers/Posts';
@@ -28,7 +28,7 @@ function App() {
 
         </header>
 
-        <Route exact path="/" component={StoriesContainer} />
+        <Route exact path="/" component={Stories} />
         <Route exact path="/posts" component={Posts} />
         <Route exact path='/storycomments/:id' component={StoryComments} />
 
