@@ -34,9 +34,9 @@ class Posts extends Component {
 
 const mapStateToProps = state => {
   return {
-    userPosts: state.storyReducer.userPosts,
-    posts: state.storyReducer.posts,
-    loading: state.storyReducer.loading
+    userPosts: state.postReducer.userPosts,
+    posts: state.postReducer.posts,
+    loading: state.postReducer.loading
   }
 }
 
