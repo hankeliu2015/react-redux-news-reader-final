@@ -12,7 +12,8 @@ import Stories from './containers/Stories';
 import Comments from './containers/Comments';
 import Navbar from './components/navbar';
 import Posts from './containers/Posts';
-// import Container from 'react-bootstrap/Container';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button'
 
 function App() {
   return (
