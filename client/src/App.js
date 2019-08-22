@@ -11,7 +11,8 @@ import NewPostTutorial from './components/NewPostTutorial';
 import StoriesContainer from './containers/storiescontainer';
 import StoryComments from './containers/storycomments';
 import Navbar from './components/navbar';
-import Posts from './containers/Posts'
+import Posts from './containers/Posts';
+// import Container from 'react-bootstrap/Container';
 
 function App() {
   return (
@@ -22,7 +23,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Please add your comments or post your own stories. 
+            Please add your comments or post your own stories.
           </p>
 
         </header>
