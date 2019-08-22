@@ -30,7 +30,7 @@ function App() {
 
         <Route exact path="/" component={Stories} />
         <Route exact path="/posts" component={Posts} />
-        <Route exact path='/storycomments/:id' component={Comments} />
+        <Route exact path='/comments/:id' component={Comments} />
 
       </div>
     </Router>
