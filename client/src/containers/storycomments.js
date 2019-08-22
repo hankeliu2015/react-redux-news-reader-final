@@ -19,17 +19,28 @@ class StoryComments extends Component {
 
     const storyComments = this.props.comments.filter(comment => parseInt(comment.story_id) ===  story.id)
 
-    const displayComments = storyComments.map((comment, index) => <li key={index}>{comment.story_comment} created at: {comment.created_at}</li>)
+    const displayComments = storyComments.slice(0).reverse().map((comment, index) => {
+
+      let commentDate = new Date(comment.created_at);
+      let dateString = commentDate.toLocaleTimeString();
+
+      return (
+        <li key={index}>
+          Comment: {comment.story_comment};
+          User: {comment.user.email};
+          Created at: {dateString}
+        </li>
+      )
+    })
 
     if (story) {
-
       return  (
         <div>
           <StoryShow story={story} />
           <hr></hr>
           <NewComment storyId={story.id} />
           <hr></hr>
-          <Comments storyComments={storyComments} dislayComments={displayComments}/>
+          <Comments storyComments={storyComments} displayComments={displayComments} />
           <hr></hr>
         </div>
       )
@@ -41,7 +52,6 @@ class StoryComments extends Component {
   }
 
   render() {
-
     return (
       <div>
         {this.reloadSingleStory()}
