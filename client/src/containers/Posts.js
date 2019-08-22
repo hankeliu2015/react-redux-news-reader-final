@@ -20,7 +20,11 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
-        <Card body key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString} By: {post.user.email}</Card>
+        <Card body key={post.id}>
+          <Card.Header>{post.title}</Card.Header>
+          <Card.Text>{post.content}</Card.Text>
+          <Card.Link href="#">Created at: {dateString}; By: {post.user.email}</Card.Link>
+        </Card>
       )
     })
 
