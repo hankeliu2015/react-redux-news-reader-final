@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { commentUpload } from '../actions/commentAction';
 // import Button from 'react-bootstrap/Button'
 
-class CommentForm extends Component {
+class NewComment extends Component {
 
   state = {
     story_comment: ""     //need to be the same as database column
@@ -37,4 +37,4 @@ class CommentForm extends Component {
   }
 }
 
-export default connect(null, {commentUpload})(CommentForm)
+export default connect(null, {commentUpload})(NewComment)

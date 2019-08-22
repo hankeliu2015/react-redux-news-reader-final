@@ -1,12 +1,6 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import fetchComments from '../actions/commentFetchAction'
 
 class Comments extends Component {
-
-  // componentDidMount() {
-  //   this.props.fetchComments();
-  // }
 
   render(){
 
@@ -24,7 +18,6 @@ class Comments extends Component {
      )
    })
 
-// debugger
     return (
       <div>
         <h4>Comments - current user and other users's comment(s) fetched from Database</h4>
@@ -36,11 +29,5 @@ class Comments extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     comments: state.commentReducer.comments
-//   }
-// }
 
-// export default connect(mapStateToProps, {fetchComments})(Comments)
 export default Comments
