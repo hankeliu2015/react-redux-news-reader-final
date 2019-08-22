@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
@@ -17,7 +18,7 @@ const store = createStore(rootReducer,  composeEnhancer(applyMiddleware(thunk)),
 ReactDOM.render(
 
   <Provider store={store}>
-    <App /> 
+    <App />
   </Provider>,
 
   document.getElementById('root'));
