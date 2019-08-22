@@ -9,7 +9,7 @@ import './App.css';
 import NewPostTutorial from './components/NewPostTutorial';
 
 import Stories from './containers/Stories';
-import StoryComments from './containers/storycomments';
+import Comments from './containers/Comments';
 import Navbar from './components/navbar';
 import Posts from './containers/Posts';
 // import Container from 'react-bootstrap/Container';
@@ -30,7 +30,7 @@ function App() {
 
         <Route exact path="/" component={Stories} />
         <Route exact path="/posts" component={Posts} />
-        <Route exact path='/storycomments/:id' component={StoryComments} />
+        <Route exact path='/storycomments/:id' component={Comments} />
 
       </div>
     </Router>
