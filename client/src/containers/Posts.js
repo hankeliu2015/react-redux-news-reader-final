@@ -14,7 +14,7 @@ class Posts extends Component {
 
     const userPosts = this.props.userPosts.map((post, index) => <li key={post.id}>Title: {post.title}; Content: {post.content} Created at: {post.created_at}</li>)
 
-    const posts = this.props.posts.map((post, index) => {
+    const posts = this.props.posts.slice(0).reverse().map((post, index) => {
       let postDate = new Date(post.created_at)
       let dateString = postDate.toDateString()
 
