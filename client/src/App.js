@@ -13,7 +13,6 @@ import Comments from './containers/Comments';
 import Navbar from './components/navbar';
 import Posts from './containers/Posts';
 import Container from 'react-bootstrap/Container';
-import Button from 'react-bootstrap/Button'
 
 function App() {
   return (
@@ -21,17 +20,19 @@ function App() {
       <div className="App">
         <Navbar />
         <br></br>
-        <header className="App-header">
+
+      <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Welcome to News Feed from Hacker News. Please add your comments or post your own stories.
           </p>
-
         </header>
 
-        <Route exact path="/" component={Stories} />
-        <Route exact path="/posts" component={Posts} />
-        <Route exact path='/comments/:id' component={Comments} /> //:id is story_id of the comment
+        <Container>
+          <Route exact path="/" component={Stories} />
+          <Route exact path="/posts" component={Posts} />
+          <Route exact path='/comments/:id' component={Comments} /> //:id is story_id of the comment
+        </Container>
 
       </div>
     </Router>

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import NewPost from '../components/NewPost';
 import PostList from '../components/postList';
 import { connect } from 'react-redux';
-import fetchPosts from '../actions/postsFetchAction'
+import fetchPosts from '../actions/postsFetchAction';
+import Card from 'react-bootstrap/Card'
 
 class Posts extends Component {
 
@@ -19,7 +20,7 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
-        <li key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString} By: {post.user.email}</li>
+        <Card body key={post.id}>Title: {post.title}; Content: {post.content}; Created at: {dateString} By: {post.user.email}</Card>
       )
     })
 
