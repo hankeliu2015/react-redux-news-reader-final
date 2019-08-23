@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
+import Card from 'react-bootstrap/Card'
 
 class Stories extends Component {
 
@@ -15,7 +16,11 @@ class Stories extends Component {
 
       return (
         <li key={index}>
-          <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
+          <Card body>
+            <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
+
+          </Card>
+
         </li>
       )
     })
