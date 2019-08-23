@@ -13,14 +13,11 @@ class Stories extends Component {
 
   render() {
     const list = this.props.stories.map((story, index) => {
-
       return (
         <li key={index}>
           <Card body>
             <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
-
           </Card>
-
         </li>
       )
     })
