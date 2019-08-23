@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import Card from 'react-bootstrap/Card'
 
 export default function StoryShow(props) {
 
@@ -7,11 +8,11 @@ export default function StoryShow(props) {
     let timeString = storyTime.toLocaleString();
 
     return (
-      <div>
-        <h4>{props.story.title}</h4>
-        <p>{props.story.text}</p>
-        <p>Published at: {timeString}</p>
-      </div>
+      <Card body>
+        <Card.Header>{props.story.title}</Card.Header>
+        <Card.Text>{props.story.text}</Card.Text>
+        <Card.Footer>Published at: {timeString}</Card.Footer>
+      </Card>
     )
   } else {
     let timeString = "Time is not available";
