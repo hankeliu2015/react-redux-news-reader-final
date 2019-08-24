@@ -30,7 +30,6 @@ class Posts extends Component {
 
     return (
       <div>
-        <NewPost />
         <PostList posts={posts} userPosts={userPosts} loading={this.props.loading} />
       </div>
     )
