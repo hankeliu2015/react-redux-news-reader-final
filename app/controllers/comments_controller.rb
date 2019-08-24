@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   def index
         if user_signed_in?
-          render json: current_user.comments
+          render json: Comment.all
         else
           render json: {}, status: 401
         end
@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
       else
         render json: comment.errors, status: 400
       end
-    else 
+    else
       render json: {}, status: 401
     end
   end
