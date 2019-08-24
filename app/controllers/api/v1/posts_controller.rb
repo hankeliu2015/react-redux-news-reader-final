@@ -4,12 +4,12 @@ module Api
 
       def index
         if user_signed_in?
-          render json: current_user.posts
+          render json: Post.all
         else
           render json: {}, status: 401
         end
       end
-      
+
       def create
         if user_signed_in?
           if post = current_user.posts.create(post_params)
