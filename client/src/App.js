@@ -24,14 +24,14 @@ function App() {
       <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Welcome to News Feed from Hacker News. Please add your comments or post your own stories.
+            Welcome to News Feed from Hacker News. Please sign in to add your comments or post your own stories.
           </p>
         </header>
 
         <Container>
           <Route exact path="/" component={Stories} />
           <Route exact path="/posts" component={Posts} />
-          <Route exact path='/comments/:id' component={Comments} />   {/* :id is story_id of the comment */} 
+          <Route exact path='/comments/:id' component={Comments} />   {/* :id is story_id of the comment */}
         </Container>
 
       </div>

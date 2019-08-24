@@ -1,6 +1,8 @@
 
 <nav style="text-align: right">
 <% if user_signed_in? %>
+  <%= "Hello " + "#{current_user.username} !" if current_user %>
+
     <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
   <% else %>
     <%= link_to('Login', new_user_session_path)  %> |
@@ -8,7 +10,7 @@
   <% end %>
 </nav>
 
-<h1 style="text-align: center">Welcome To NewsReader, please login or sign up </h1>
+<!-- <h1 style="text-align: center">Welcome To NewsReader, please login or sign up </h1> -->
 <!-- <p style="text-align: center">If you're logged in, check out <%= link_to "the app", app_path %>!</p> -->
 
 <div id="root"></div>

@@ -28,11 +28,8 @@ class NewPost extends Component {
     return (
       <div>
         <form onSubmit={this.handleOnSubmit}>
-        <h4>Publishing your own story: </h4>
-          <label>Title</label>
-          <br></br>
+          <h5>Your Post Title</h5>
           <input type="text" name="title" onChange={this.handleOnChange} value={this.state.title}></input>
-
           <br></br>
           <label>Post Content</label>
           <br></br>
