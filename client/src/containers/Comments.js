@@ -27,7 +27,7 @@ class Comments extends Component {
       return (
         <li key={index}>
           Comment: {comment.story_comment};
-          User: {comment.user.email};
+          User: {comment.user.username};
           Created at: {dateString}
         </li>
       )
