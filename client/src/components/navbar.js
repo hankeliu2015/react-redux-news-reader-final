@@ -15,6 +15,7 @@ export default function Navbar() {
       <div >
         <NavLink to="/" style={linkStyle} activeStyle={{background: 'darkblue'}}>Hacker News Feed</NavLink>
         <NavLink to="/posts" style={linkStyle} activeStyle={{background: 'darkblue'}}>Users Posts</NavLink>
+        <NavLink to="/newpost" style={linkStyle} activeStyle={{background: 'darkblue'}}>Post Your Story</NavLink>
       </div>
     )
 }

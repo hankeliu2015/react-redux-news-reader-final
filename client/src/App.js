@@ -12,6 +12,7 @@ import Stories from './containers/Stories';
 import Comments from './containers/Comments';
 import Navbar from './components/navbar';
 import Posts from './containers/Posts';
+import NewPost from './components/NewPost';
 import Container from 'react-bootstrap/Container';
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Container>
           <Route exact path="/" component={Stories} />
           <Route exact path="/posts" component={Posts} />
+          <Route exact path="/newpost" component={NewPost} />
           <Route exact path='/comments/:id' component={Comments} />   {/* :id is story_id of the comment */}
         </Container>
 
