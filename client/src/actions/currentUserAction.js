@@ -1,6 +1,7 @@
 export default function currentUserFetch() {
   return dispatch => {
     dispatch({type: 'LOADING_USER'});
+
     return (
       fetch('http://localhost:3000/api/v1/current_user')
       .then(resq => resq.json())

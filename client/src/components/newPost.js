@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux'
 import { postUpload } from '../actions/postCreateAction';
+import currentUserFetch from '../actions/currentUserAction';
+
 
 class NewPost extends Component {
   state = {
     content: '',
     title: ''
+  }
+
+  componentDidMount() {
+    this.props.currentUserFetch();
   }
 
   handleOnChange = event => {
@@ -37,7 +43,7 @@ class NewPost extends Component {
         </form>
 
         <h6>
-          {this.props.userPosts.length !== 0 ? ("Your Post is successfully Published") : "Please click on Submit to Publish your Post"}
+          {this.props.userPosts.length !== 0 ? (`Your Post is successfully Published`) : `Hi ${this.props.user.username}, Please click on Submit to Publish your Post`}
         </h6>
 
       </div>
@@ -47,8 +53,9 @@ class NewPost extends Component {
 
 const mapStateToProps = state => {
   return {
-    userPosts: state.postReducer.userPosts
+    userPosts: state.postReducer.userPosts,
+    user: state.currentUserReducer.user
   }
 }
 
-export default connect(mapStateToProps, {postUpload})(NewPost)
+export default connect(mapStateToProps, {postUpload, currentUserFetch})(NewPost)
