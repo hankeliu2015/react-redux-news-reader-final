@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NewPost from '../components/NewPost';
-import PostList from '../components/postList';
+import PostList from '../components/PostList';
 import { connect } from 'react-redux';
 import fetchPosts from '../actions/postsFetchAction';
 import Card from 'react-bootstrap/Card'
