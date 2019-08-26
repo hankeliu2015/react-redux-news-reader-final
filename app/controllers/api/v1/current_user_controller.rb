@@ -4,7 +4,7 @@ module Api
 
       def index
         if user_signed_in?
-          render json: current_user.name
+          render json: current_user.username
         else
           render json: {}, status: 401
         end
