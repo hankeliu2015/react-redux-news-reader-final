@@ -10,6 +10,16 @@ module Api
         end
       end
 
+      def show
+        binding.pry
+        if user_signed_in?
+
+          render json: Post.find(params[:id])
+        else
+          render json: {}, status: 401
+        end
+      end
+
       def create
         if user_signed_in?
   # binding.pry
