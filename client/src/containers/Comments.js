@@ -4,14 +4,22 @@ import CommentList from '../components/commentList';
 import StoryShow from '../components/storyShow';
 import { connect } from 'react-redux';
 import { fetchSingleStory } from '../actions/singleStoryAction';
+import { fetchSinglePost } from '../actions/singlePostAction';
 import fetchComments from '../actions/commentFetchAction'
 
 class Comments extends Component {
 
   componentDidMount() {
-    this.props.fetchSingleStory(this.props.match.params.id);
-    this.props.fetchComments();
+    // debugger
+    if (this.props.match.path === "/comments/:id") {
+      this.props.fetchSingleStory(this.props.match.params.id);
+      this.props.fetchComments();
+    } else if (this.props.match.path === "/postcomments/:id"){
+      this.props.fetchSinglePost(this.props.match.params.id);
+      this.props.fetchComments();
     }
+
+  }
 
   reloadSingleStory = () => {
 
@@ -64,8 +72,9 @@ const mapStateToProps = state => {
   return {
     stories: state.storyReducer.stories,
     singleStory: state.storyReducer.singleStory,
-    comments: state.commentReducer.comments
+    comments: state.commentReducer.comments,
+    singlePost: state.postReducer.singlePost
   }
 }
 
-export default connect(mapStateToProps, {fetchSingleStory, fetchComments})(Comments)
+export default connect(mapStateToProps, {fetchSingleStory, fetchComments, fetchSinglePost})(Comments)
