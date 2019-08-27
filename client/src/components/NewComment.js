@@ -19,7 +19,10 @@ class NewComment extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
-    this.props.commentUpload(this.state, valueCSRF)
+    this.props.commentUpload(this.state, valueCSRF);
+    this.setState({
+      story_comment: ''
+    });
   }
 
   render() {
@@ -28,7 +31,7 @@ class NewComment extends Component {
         <form onSubmit={this.handleOnSubmit}>
           <label>Please add your comment</label>
           <br></br>
-          <textarea value={this.state.comment} name="story_comment" rows="5" cols="60" onChange={this.handleOnChange}></textarea>
+          <textarea value={this.state.story_comment} name="story_comment" rows="5" cols="60" onChange={this.handleOnChange}></textarea>
           <br></br>
           <button type="submit">Submit</button>
         </form>
