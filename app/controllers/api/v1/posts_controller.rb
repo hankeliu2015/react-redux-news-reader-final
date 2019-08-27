@@ -12,7 +12,7 @@ module Api
 
       def create
         if user_signed_in?
-  
+  # binding.pry
           if post = current_user.posts.create(post_params)
             render json: post, status: :created
           else
