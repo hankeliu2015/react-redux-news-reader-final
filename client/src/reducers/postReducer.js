@@ -1,4 +1,4 @@
-export default function postReducer(state={userPosts: [], posts: [], loading:false}, action) {
+export default function postReducer(state={userPosts: [], posts: [], singlePost: [], loading:false}, action) {
   switch(action.type) {
 
     case 'LOADING_POST':
@@ -12,6 +12,12 @@ export default function postReducer(state={userPosts: [], posts: [], loading:fal
 
     case 'FETCHING_POSTS':
       return {...state, posts: action.payload, loading: false};
+
+    case 'LOADING_SINGLE_POST':
+      return {...state, loading:true}
+
+    case 'FETCH_SINGLE_POST':
+      return {...state, singlePOST: action.payload, loading: false}
 
     default:
       return state;
