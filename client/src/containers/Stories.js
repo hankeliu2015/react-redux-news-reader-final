@@ -4,12 +4,14 @@ import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
 import Card from 'react-bootstrap/Card';
-import Header from '../components/header'
+import Header from '../components/header';
+import currentUserFetch from '../actions/currentUserAction';
 
 class Stories extends Component {
 
   componentDidMount() {
-    this.props.fetchStories()
+    this.props.fetchStories();
+    this.props.currentUserFetch();
   }
 
   render() {
@@ -25,7 +27,7 @@ class Stories extends Component {
 
     return (
       <div>
-        <Header />
+        <Header username = {this.props.user.username}/>
         <StoriesList list={list} loading={this.props.loading} />
       </div>
     )
@@ -35,7 +37,8 @@ class Stories extends Component {
 const mapStatetoProps = state => {
   return {
     stories: state.storyReducer.stories,
-    loading: state.storyReducer.loading
+    loading: state.storyReducer.loading,
+    user: state.currentUserReducer.user
   }
 }
-export default connect(mapStatetoProps, {fetchStories})(Stories)
+export default connect(mapStatetoProps, {fetchStories, currentUserFetch})(Stories)
