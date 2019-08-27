@@ -10,6 +10,7 @@ class NewComment extends Component {
   }
 
   handleOnChange = event => {
+    // debugger
     this.setState({
       [event.target.name]: event.target.value,
       story_id: this.props.storyId
