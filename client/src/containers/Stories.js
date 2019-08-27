@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
-import Card from 'react-bootstrap/Card'
+import Card from 'react-bootstrap/Card';
+import Header from '../components/header'
 
 class Stories extends Component {
 
@@ -24,6 +25,7 @@ class Stories extends Component {
 
     return (
       <div>
+        <Header />
         <StoriesList list={list} loading={this.props.loading} />
       </div>
     )
