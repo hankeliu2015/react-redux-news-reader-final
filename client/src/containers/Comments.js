@@ -59,6 +59,44 @@ class Comments extends Component {
     }
   }
 
+  reloadSinglePost = () => {
+
+    const post = this.props.singlePost
+
+    const postComments = this.props.comments.filter(comment => parseInt(comment.post_id) ===  post.id)
+
+    const displayComments = postComments.slice(0).reverse().map((comment, index) => {
+
+      let commentDate = new Date(comment.created_at);
+      let dateString = commentDate.toLocaleTimeString();
+
+      return (
+        <li key={index}>
+          Comment: {comment.story_comment};
+          User: {comment.user.username};
+          Created at: {dateString}
+        </li>
+      )
+    })
+
+    if (post) {
+      return  (
+        <div>
+          <StoryShow post={post} />
+          <hr></hr>
+          <NewComment postId={post.id} />
+          <hr></hr>
+          <CommentList postComments={postComments} displayComments={displayComments} />
+          <hr></hr>
+        </div>
+      )
+    } else {
+      return (
+        <div> ...loading </div> //need another condition to remind user back to storylist.
+      )
+    }
+  }
+
   render() {
     return (
       <div>
