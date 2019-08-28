@@ -99,11 +99,20 @@ class Comments extends Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.reloadSingleStory()}
-      </div>
-    )
+    // debugger
+    if (this.props.match.path === "/comments/:id") {
+      return (
+        <div>
+          {this.reloadSingleStory()}
+        </div>
+      )
+    } else if (this.props.match.path === "/postcomments/:id") {
+      return (
+        <div>
+          {this.reloadSinglePost()}
+        </div>
+      )
+    }
   }
 }
 
