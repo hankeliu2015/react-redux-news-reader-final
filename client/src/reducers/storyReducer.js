@@ -1,4 +1,4 @@
-export default function storyReducer(state={userPosts:[], posts:[], stories: [], singleStory: [], loading: false}, action) {
+export default function storyReducer(state={stories: [], singleStory: [], loading: false}, action) {
   switch(action.type) {
 
     case 'LOADING_STORIES':
