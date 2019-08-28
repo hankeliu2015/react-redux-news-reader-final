@@ -17,7 +17,7 @@ export default function postReducer(state={userPosts: [], posts: [], singlePost:
       return {...state, loading:true}
 
     case 'FETCH_SINGLE_POST':
-      return {...state, singlePOST: action.payload, loading: false}
+      return {...state, singlePost: action.payload, loading: false}
 
     default:
       return state;
