@@ -22,16 +22,6 @@ function App() {
       <div className="App">
         <Navbar />
         <br></br>
-
-        {/*
-          <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-          Welcome to News Feed from Hacker News. Please sign in to add your comments or post your own stories.
-          </p>
-          </header>
-          */}
-
         <Container>
           <Route exact path="/" component={Stories} />
           <Route exact path="/posts" component={Posts} />
