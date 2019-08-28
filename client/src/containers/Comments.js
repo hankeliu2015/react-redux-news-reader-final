@@ -49,7 +49,7 @@ class Comments extends Component {
           <hr></hr>
           <NewComment storyId={story.id} />
           <hr></hr>
-          <CommentList storyComments={storyComments} displayComments={displayComments} />
+          <CommentList displayComments={displayComments} />
           <hr></hr>
         </div>
       )
@@ -87,7 +87,7 @@ class Comments extends Component {
           <hr></hr>
           <NewComment postId={post.id} />
           <hr></hr>
-          <CommentList postComments={postComments} displayComments={displayComments} />
+          <CommentList displayComments={displayComments} />
           <hr></hr>
         </div>
       )
