@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NewComment from '../components/NewComment';
 import CommentList from '../components/commentList';
 import StoryShow from '../components/storyShow';
+import PostShow from '../components/postShow';
 import { connect } from 'react-redux';
 import { fetchSingleStory } from '../actions/singleStoryAction';
 import { fetchSinglePost } from '../actions/singlePostAction';
@@ -82,7 +83,7 @@ class Comments extends Component {
     if (post) {
       return  (
         <div>
-          <StoryShow post={post} />
+          <PostShow post={post} />
           <hr></hr>
           <NewComment postId={post.id} />
           <hr></hr>
