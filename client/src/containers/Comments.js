@@ -11,7 +11,6 @@ import fetchComments from '../actions/commentFetchAction'
 class Comments extends Component {
 
   componentDidMount() {
-    // debugger
     if (this.props.match.path === "/comments/:id") {
       this.props.fetchSingleStory(this.props.match.params.id);
       this.props.fetchComments();
@@ -19,7 +18,6 @@ class Comments extends Component {
       this.props.fetchSinglePost(this.props.match.params.id);
       this.props.fetchComments();
     }
-
   }
 
   reloadSingleStory = () => {
@@ -63,7 +61,6 @@ class Comments extends Component {
   reloadSinglePost = () => {
 
     const post = this.props.singlePost
-
     const postComments = this.props.comments.filter(comment => parseInt(comment.post_id) ===  post.id)
 
     const displayComments = postComments.slice(0).reverse().map((comment, index) => {
@@ -99,7 +96,6 @@ class Comments extends Component {
   }
 
   render() {
-    // debugger
     if (this.props.match.path === "/comments/:id") {
       return (
         <div>
