@@ -19,7 +19,7 @@ class NewComment extends Component {
     else if (this.props.postId) {
       this.setState({
         [event.target.name]: event.target.value,
-        story_id: this.props.postId
+        post_id: this.props.postId
       })
     }
   }
