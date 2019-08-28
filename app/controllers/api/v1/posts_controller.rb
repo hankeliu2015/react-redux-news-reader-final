@@ -11,7 +11,6 @@ module Api
       end
 
       def show
-        binding.pry
         if user_signed_in?
 
           render json: Post.find(params[:id])
