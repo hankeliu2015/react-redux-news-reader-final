@@ -5,16 +5,16 @@ News Reader App
   Devise sign up and Login.
 
 * Environment
-  Ruby 2.6.2
-  Rails 5.2.3
-  Node Version: 12.8.0
-  npm: 6.10.3
-  OS: Mac OS 10.13.5
+  Ruby 2.6.2;
+  Rails 5.2.3;
+  Node Version: 12.8.0;
+  npm: 6.10.3;
+  OS: Mac OS 10.13.5;
   Editor: Atom 1.35.1
 
 * Set up Webpacker
-  gem 'webpacker'
-  rails webpacker:install
+  gem 'webpacker';
+  rails webpacker:install;
   rails webpacker:install:react
 
 * Deployment instructions
