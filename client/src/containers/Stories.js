@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
+import StoryCard from '../components/StoryCard';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 
@@ -42,7 +43,7 @@ class Stories extends Component {
                 </button>
               </form>
             </Button>
-            
+
             <Button variant="light">
                Like: {this.state.rating}
             </Button>
@@ -55,6 +56,7 @@ class Stories extends Component {
     return (
       <div>
         <Header username = {this.props.user.username}/>
+        <StoryCard />
         <StoriesList list={list} loading={this.props.loading} />
       </div>
     )
