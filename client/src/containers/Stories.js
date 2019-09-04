@@ -6,49 +6,21 @@ import StoriesList from '../components/storiesList';
 import StoryCard from '../components/StoryCard';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-
 import Header from '../components/header';
 import currentUserFetch from '../actions/currentUserAction';
 
 class Stories extends Component {
-
-  state = {
-    rating: 0
-  }
 
   componentDidMount() {
     this.props.fetchStories();
     this.props.currentUserFetch();
   }
 
-  handleOnClick = event => {
-    // debugger
-    event.preventDefault();
-    this.setState({
-      rating: this.state.rating +1
-    })
-  }
-
   render() {
     const list = this.props.stories.map((story, index) => {
       return (
         <li key={index}>
-          <Card body>
-            <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
-
-            <Button variant="light">
-              <form onSubmit = {this.handleOnClick}>
-                <button>
-                  Vote
-                </button>
-              </form>
-            </Button>
-
-            <Button variant="light">
-               Like: {this.state.rating}
-            </Button>
-
-          </Card>
+          <StoryCard story = {story} />
         </li>
       )
     })
@@ -56,7 +28,6 @@ class Stories extends Component {
     return (
       <div>
         <Header username = {this.props.user.username}/>
-        <StoryCard />
         <StoriesList list={list} loading={this.props.loading} />
       </div>
     )
