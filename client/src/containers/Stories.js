@@ -34,14 +34,17 @@ class Stories extends Component {
         <li key={index}>
           <Card body>
             <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
-            <form onSubmit = {this.handleOnClick}>
-              <button  variant="light">
-                Vote
-              </button>
 
-            </form>
             <Button variant="light">
-               {this.state.rating}
+              <form onSubmit = {this.handleOnClick}>
+                <button>
+                  Vote
+                </button>
+              </form>
+            </Button>
+            
+            <Button variant="light">
+               Like: {this.state.rating}
             </Button>
 
           </Card>
