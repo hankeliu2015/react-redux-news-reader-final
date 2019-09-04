@@ -4,14 +4,28 @@ import { fetchStories } from '../actions/storyAction';
 import { Link } from 'react-router-dom';
 import StoriesList from '../components/storiesList';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+
 import Header from '../components/header';
 import currentUserFetch from '../actions/currentUserAction';
 
 class Stories extends Component {
 
+  state = {
+    rating: 0
+  }
+
   componentDidMount() {
     this.props.fetchStories();
     this.props.currentUserFetch();
+  }
+
+  handleOnClick = event => {
+    // debugger
+    event.preventDefault();
+    this.setState({
+      rating: this.state.rating +1
+    })
   }
 
   render() {
@@ -20,6 +34,16 @@ class Stories extends Component {
         <li key={index}>
           <Card body>
             <Link to={`${story ? "/comments/" + story.id : 'stories'}`}> {story ? story.title : "This Story is missing"}</Link>
+            <form onSubmit = {this.handleOnClick}>
+              <button  variant="light">
+                Vote
+              </button>
+
+            </form>
+            <Button variant="light">
+               {this.state.rating}
+            </Button>
+
           </Card>
         </li>
       )
