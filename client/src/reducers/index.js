@@ -5,5 +5,5 @@ import postReducer from './postReducer';
 import currentUserReducer from './currentUserReducer';
 
 export default combineReducers({
-  commentReducer, storyReducer, postReducer, currentUserReducer
+  commentReducer, storyReducer, postReducer, currentUserReducer, likeVoteReducer
 })
