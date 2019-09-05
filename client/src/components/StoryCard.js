@@ -7,14 +7,20 @@ import { connect } from 'react-redux';
 
 class StoryCard extends Component{
   state = {
-    rating: 0
+    vote: 0,
+    item_id: ""
   }
 
   handleOnClick = event => {
     event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
     this.setState({
-      rating: this.state.rating +1
+      vote: this.state.vote +1,
+      item_id: this.props.story.id
     })
+
+    this.props.likeVote(this.state, valueCSRF)
   }
 
   render () {
