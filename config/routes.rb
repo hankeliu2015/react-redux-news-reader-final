@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :likes
   resources :stories
   resources :comments
   # resources :posts
