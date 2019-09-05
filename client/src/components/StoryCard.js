@@ -7,8 +7,8 @@ import { connect } from 'react-redux';
 
 class StoryCard extends Component{
   state = {
-    vote: 0,
-    item_id: ""
+    vote: 1,
+    item_id: this.props.story.id
   }
 
   handleOnClick = event => {
@@ -17,7 +17,7 @@ class StoryCard extends Component{
 
     this.setState({
       vote: this.state.vote +1,
-      item_id: this.props.story.id
+      // item_id: this.props.story.id
     })
 
     this.props.likeVote(this.state, valueCSRF)
