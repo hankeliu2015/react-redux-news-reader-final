@@ -3,12 +3,18 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { likeVote } from '../actions/likeVoteAction';
+import { fetchLike } from '../actions/likeFetchAction';
 import { connect } from 'react-redux';
 
 class StoryCard extends Component{
+
   state = {
     vote: 1,
     item_id: this.props.story.id
+  }
+
+  componentDidMount() {
+    this.props.fetchLike(this.props.story.id);
   }
 
   handleOnClick = event => {
@@ -52,4 +58,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {likeVote})(StoryCard)
+export default connect(mapStateToProps, {likeVote, fetchLike})(StoryCard)
