@@ -9,7 +9,9 @@ class LikesController < ApplicationController
 
   def show
     if user_signed_in?
-      render json: Like.find(params[:id])
+      like = Like.find_by(item_id: params[:id])
+      
+      render json: Like.find(like.id)
     else
       render json: {}, status: 401
     end
