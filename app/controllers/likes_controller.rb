@@ -9,11 +9,23 @@ class LikesController < ApplicationController
 
   def create
     if user_signed_in?
-      if like = Like.create(like_params)
-        render json: like, status: :created
+      if like = Like.find_by(item_id: params["item_id"])
+
+        updated_vote = like["vote"] + 1
+        if like.update(vote: updated_vote)
+          render json: like, status: :updated
+        else
+          render json: like.errors, status: 400
+        end
+
       else
-        render json: like.errors, status: 400
+        if like = Like.create(like_params)
+          render json: like, status: :created
+        else
+          render json: like.errors, status: 400
+        end
       end
+
     else
       render json: {}, status: 401
     end
