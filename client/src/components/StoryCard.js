@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { likeVote } from '../actions/likeVoteAction'
 
 class StoryCard extends Component{
   state = {
