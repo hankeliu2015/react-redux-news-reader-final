@@ -24,7 +24,7 @@ class StoryCard extends Component{
             <Link to={`${this.props.story ? "/comments/" + this.props.story.id : 'stories'}`}> {this.props.story ? this.props.story.title : "This Story is missing"}</Link>
 
             <Button variant="light">
-              Likes: {this.state.rating}
+              Likes: {this.props.vote}
             </Button>
 
             <Button variant="light">
