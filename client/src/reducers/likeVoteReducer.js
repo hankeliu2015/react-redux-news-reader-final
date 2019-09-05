@@ -7,6 +7,12 @@ export default function likeVoteReducer(state={vote: 0, loading: false}, action)
     case 'ADDING_VOTE':
       return {vote: state.vote + 1, loading: false}
 
+    case 'LOADING_VOTE':
+      return {...state, loading:true};
+
+    case 'FETCHING_VOTE':
+      return {vote: action.payload, loading: false}
+
     default:
       return state;
   }
