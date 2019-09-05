@@ -1,4 +1,4 @@
-export default function likeVoteReducer(state={vote: 0, loading: false}, action) {
+export default function likeVoteReducer(state={vote: 0, like: 0, loading: false}, action) {
   switch(action.type) {
 
     case 'UPLOADING_VOTE':
@@ -11,7 +11,7 @@ export default function likeVoteReducer(state={vote: 0, loading: false}, action)
       return {...state, loading:true};
 
     case 'FETCHING_VOTE':
-      return {vote: action.payload, loading: false}
+      return {like: action.payload, loading: false}
 
     default:
       return state;
