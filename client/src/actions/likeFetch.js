@@ -3,7 +3,7 @@ export function fetchLike(itemId) {
   return dispatch => {
     dispatch({type: 'LOADING_VOTE'});
     return (
-      fetch('http://localhost:3000/likes/${itemId}')
+      fetch(`http://localhost:3000/likes/${itemId}`)
       .then(resp => resp.json())
       .then(like => {
         dispatch({type:'FETCHINGING_VOTE', payload: like.vote})
