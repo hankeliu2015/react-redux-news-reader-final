@@ -7,6 +7,14 @@ class LikesController < ApplicationController
         end
       end
 
+  def show
+    if user_signed_in?
+      render json: Like.find(params[:id])
+    else
+      render json: {}, status: 401
+    end
+  end
+
   def create
     if user_signed_in?
       if like = Like.find_by(item_id: params["item_id"])
