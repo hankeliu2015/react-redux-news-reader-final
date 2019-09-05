@@ -9,7 +9,6 @@ class StoryCard extends Component{
   }
 
   handleOnClick = event => {
-    // debugger
     event.preventDefault();
     this.setState({
       rating: this.state.rating +1
