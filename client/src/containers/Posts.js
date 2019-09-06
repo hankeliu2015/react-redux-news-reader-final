@@ -23,7 +23,9 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
+        <div key={post.id}>
           <PostCard post={post} postDate={postDate} dateString = {dateString} />
+        </div>
       )
     })
 

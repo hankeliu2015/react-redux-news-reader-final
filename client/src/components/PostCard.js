@@ -12,8 +12,7 @@ class PostCard extends Component{
 
   render() {
     return (
-      <div>
-        <Card body key={this.props.post.id} border="light">
+        <Card body border="light">
           <Card.Header>
             Created at: {this.props.dateString}; By: {this.props.post.user.username};
           </Card.Header>
@@ -31,7 +30,6 @@ class PostCard extends Component{
             Like: 0
           </Button>
         </Card>
-      </div>
     )
   }
 }
