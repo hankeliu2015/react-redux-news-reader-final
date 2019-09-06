@@ -33,10 +33,15 @@ module Api
       end
 
       def update
+        # binding.pry
         if user_signed_in?
           @post = Post.find(params[:id])
-          updated_like = @post.like + 1
-          @post.update(like: updated_like)
+          if @post.like == nil
+            @post.update(like: 1)
+          else
+            updated_like = @post[:like] + 1
+            @post.update(like: updated_like)
+          end
           render json: Post.find(params[:id])
         else
           render json: {}, status: 401
