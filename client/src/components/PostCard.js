@@ -19,7 +19,7 @@ class PostCard extends Component{
       vote: this.state.vote +1,
     })
 
-    this.props.likePost(this.state, valueCSRF);
+    this.props.likePost(this.props.post.id, this.state, valueCSRF);
     // this.props.fetchLike(this.props.story.id)
   }
 
@@ -49,4 +49,10 @@ class PostCard extends Component{
   }
 }
 
-export default PostCard;
+const mapStateToProps = state => {
+  return {
+    likes: state.likePostReducer.likes
+  }
+}
+
+export default connect(mapStateToProps, {likePost})(PostCard);
