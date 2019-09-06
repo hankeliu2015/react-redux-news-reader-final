@@ -7,8 +7,20 @@ import { connect } from 'react-redux';
 class PostCard extends Component{
   state = {
       vote: 1,
-      post_id: ""
+      post_id: this.props.post.id
     }
+
+  handleOnClick = event => {
+    event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
+    this.setState({
+      vote: this.state.vote +1,
+    })
+
+    this.props.likeVote(this.state, valueCSRF);
+    // this.props.fetchLike(this.props.story.id)
+  }
 
   render() {
     return (
@@ -24,7 +36,9 @@ class PostCard extends Component{
             </Link>
           </Button>
           <Button variant="light">
-            Vote
+            <form onSubmit = {this.handleOnClick}>
+              <input type="submit" value="Vote"/>
+            </form>
           </Button>
           <Button variant="light">
             Like: 0

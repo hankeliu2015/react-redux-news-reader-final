@@ -49,7 +49,7 @@ class StoryCard extends Component{
 
             <Button variant="light">
               <form onSubmit = {this.handleOnClick}>
-                <button type="submit">Vote</button>
+                <input type="submit" value = "Vote"/>
               </form>
             </Button>
 
@@ -61,7 +61,6 @@ class StoryCard extends Component{
 
 
 const mapStateToProps = state => {
-  // debugger
   return {
     vote: state.likeVoteReducer.vote,
     likes: state.likeVoteReducer.likes
