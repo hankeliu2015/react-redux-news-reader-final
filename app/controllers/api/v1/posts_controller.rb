@@ -21,7 +21,7 @@ module Api
 
       def create
         if user_signed_in?
-  # binding.pry
+
           if post = current_user.posts.create(post_params)
             render json: post, status: :created
           else
@@ -32,8 +32,19 @@ module Api
         end
       end
 
+      def update
+        if user_signed_in?
+          @post = Post.find(params[:id])
+          updated_like = @post.like + 1
+          @post.update(like: updated_like)
+          render json: Post.find(params[:id])
+        else
+          render json: {}, status: 401
+        end
+      end
+
       def post_params
-        params.require(:post).permit(:title, :content)
+        params.require(:post).permit(:title, :content, :like)
       end
 
     end

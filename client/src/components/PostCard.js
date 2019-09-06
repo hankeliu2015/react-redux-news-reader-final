@@ -3,11 +3,12 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { likePost } from '../actions/likePostAction';
 
 class PostCard extends Component{
   state = {
       vote: 1,
-      post_id: this.props.post.id
+      id: this.props.post.id
     }
 
   handleOnClick = event => {
@@ -18,7 +19,7 @@ class PostCard extends Component{
       vote: this.state.vote +1,
     })
 
-    this.props.likeVote(this.state, valueCSRF);
+    this.props.likePost(this.state, valueCSRF);
     // this.props.fetchLike(this.props.story.id)
   }
 
