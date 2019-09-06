@@ -15,7 +15,7 @@ class PostCard extends Component{
       <div>
         <Card body key={this.props.post.id} border="light">
           <Card.Header>
-            Created at: {dateString}; By: {this.props.post.user.username};
+            Created at: {this.props.dateString}; By: {this.props.post.user.username};
           </Card.Header>
           <Card.Title>{this.props.post.title}</Card.Title>
           <Card.Text>{this.props.post.content}</Card.Text>

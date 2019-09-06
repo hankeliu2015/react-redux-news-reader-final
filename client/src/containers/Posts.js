@@ -23,7 +23,7 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
-        <PostCard post={post} />
+          <PostCard post={post} postDate={postDate} dateString = {dateString} />
       )
     })
 
