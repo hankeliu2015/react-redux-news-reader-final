@@ -13,6 +13,7 @@ class StoryCard extends Component{
     item_id: this.props.story.id
   }
 
+
   componentDidMount() {
     this.props.fetchLike(this.props.story.id);
   }
@@ -23,21 +24,29 @@ class StoryCard extends Component{
 
     this.setState({
       vote: this.state.vote +1,
-      // item_id: this.props.story.id
     })
 
-    this.props.likeVote(this.state, valueCSRF)
+    this.props.likeVote(this.state, valueCSRF);
+    // this.props.fetchLike(this.props.story.id)
   }
 
   render () {
+
+    let currentStoryId = this.props.story.id
+    let currentItemLike = this.props.likes.filter(like => {
+      // debugger
+      currentStoryId === parseInt(like.item_id)
+      })
+// debugger
     return (
       <div>
         <Card body>
             <Link to={`${this.props.story ? "/comments/" + this.props.story.id : 'stories'}`}> {this.props.story ? this.props.story.title : "This Story is missing"}</Link>
 
             <Button variant="light">
-              Likes: {this.props.vote}
+              Likes: {currentItemLike.vote ? currentItemLike.vote : 0 }
             </Button>
+
 
             <Button variant="light">
               <form onSubmit = {this.handleOnClick}>
@@ -53,8 +62,10 @@ class StoryCard extends Component{
 
 
 const mapStateToProps = state => {
+  // debugger
   return {
-    vote: state.likeVoteReducer.vote
+    vote: state.likeVoteReducer.vote,
+    likes: state.likeVoteReducer.likes
   }
 }
 
