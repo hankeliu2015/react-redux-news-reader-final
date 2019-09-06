@@ -13,6 +13,7 @@ class PostCard extends Component{
     }
 
   componentDidMount() {
+    // debugger
     this.props.fetchLikePost(this.props.post.id);
   }
 
