@@ -6,6 +6,7 @@ import fetchPosts from '../actions/postsFetchAction';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import PostCard from '../components/PostCard'
 
 class Posts extends Component {
 
@@ -22,18 +23,7 @@ class Posts extends Component {
       let dateString = postDate.toDateString()
 
       return(
-        <Card body key={post.id} border="light">
-          <Card.Header>
-            Created at: {dateString}; By: {post.user.username};
-          </Card.Header>
-          <Card.Title>{post.title}</Card.Title>
-          <Card.Text>{post.content}</Card.Text>
-          <Button variant="light">
-            <Link to={`${post ? "/postcomments/" + post.id : 'posts'}`}>
-              {post ? "Add Comments" : "This Post is missing"}
-            </Link>
-          </Button>
-        </Card>
+        <PostCard post={post} />
       )
     })
 
