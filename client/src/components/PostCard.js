@@ -48,7 +48,7 @@ class PostCard extends Component{
             </form>
           </Button>
           <Button variant="light">
-            Like: {this.props.likes}
+            Like: {this.props.post.like ? this.props.post.like : 0}
           </Button>
         </Card>
     )
