@@ -14,6 +14,8 @@ export default function likeVoteReducer(state={vote: 0, likes: [], loading: fals
     // debugger
       return {...state, likes: [...state.likes, action.payload], loading: false}
 
+      // return {...state, likes: {...state.likes, action.payload.item_id: action.payload}, loading: false}
+
     default:
       return state;
   }
