@@ -4,18 +4,12 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { likePost } from '../actions/likePostAction';
-import { fetchLikePost } from '../actions/likePostFetchAction';
 
 class PostCard extends Component{
   state = {
       vote: 0,
       id: this.props.post.id
     }
-
-  componentDidMount() {
-    // debugger
-    this.props.fetchLikePost(this.props.post.id);
-  }
 
   handleOnClick = event => {
     event.preventDefault();
@@ -26,7 +20,6 @@ class PostCard extends Component{
     })
 
     this.props.likePost(this.props.post.id, this.state, valueCSRF);
-    // this.props.fetchLike(this.props.story.id)
   }
 
   render() {
@@ -48,7 +41,7 @@ class PostCard extends Component{
             </form>
           </Button>
           <Button variant="light">
-            Like: {this.props.post.like ? this.props.post.like + this.state.vote : 0}
+            Likes: {this.props.post.like ? this.props.post.like + this.state.vote : 0}
           </Button>
         </Card>
     )
@@ -61,4 +54,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {likePost, fetchLikePost})(PostCard);
+export default connect(mapStateToProps, {likePost})(PostCard);

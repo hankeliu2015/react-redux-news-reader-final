@@ -5,7 +5,6 @@ export default function likePostReducer(state={likes: [], loading: false}, actio
       return {...state, loading:true};
 
     case 'FETCHING_POSTLIKE':
-    // debugger
       return {...state, likes: action.payload, loading: false}
 
     default:
