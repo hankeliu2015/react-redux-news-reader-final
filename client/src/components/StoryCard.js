@@ -13,10 +13,9 @@ class StoryCard extends Component{
     item_id: this.props.story.id
   }
 
-
-  componentDidMount() {
-    this.props.fetchLike(this.props.story.id);
-  }
+  // componentDidMount() {
+  //   this.props.fetchLike(this.props.story.id);
+  // }
 
   handleOnClick = event => {
     event.preventDefault();
@@ -44,7 +43,8 @@ class StoryCard extends Component{
             <Link to={`${this.props.story ? "/comments/" + this.props.story.id : 'stories'}`}> {this.props.story ? this.props.story.title : "This Story is missing"}</Link>
 
             <Button variant="light">
-              Likes: {currentItemLike[0] ? currentItemLike[0].vote : 0 }
+              Likes: 0
+              {/* {currentItemLike[0] ? currentItemLike[0].vote : 0 } */}
             </Button>
 
             <Button variant="light">
