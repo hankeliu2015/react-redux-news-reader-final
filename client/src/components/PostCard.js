@@ -8,7 +8,7 @@ import { fetchLikePost } from '../actions/likePostFetchAction';
 
 class PostCard extends Component{
   state = {
-      vote: 1,
+      vote: 0,
       id: this.props.post.id
     }
 
@@ -48,7 +48,7 @@ class PostCard extends Component{
             </form>
           </Button>
           <Button variant="light">
-            Like: {this.props.post.like ? this.props.post.like : 0}
+            Like: {this.props.post.like ? this.props.post.like + this.state.vote : 0}
           </Button>
         </Card>
     )
