@@ -16,7 +16,7 @@ export default function likeVoteReducer(state={vote: 0, likes: [], allLikes: [],
       // return {...state, likes: {...state.likes, action.payload.item_id: action.payload}, loading: false}
 
       case 'FETCHING_AllLIKES':
-      return {...state, allLikes: payload.likes, loading: false}
+      return {...state, allLikes: action.payload, loading: false}
 
     default:
       return state;
