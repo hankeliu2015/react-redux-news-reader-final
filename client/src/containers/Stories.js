@@ -22,11 +22,24 @@ class Stories extends Component {
     // debugger
     const list = this.props.stories.map((story, index) => {
       // debugger
-      return (
-        <li key={index}>
-          <StoryCard story = {story} />
-        </li>
-      )
+      let foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === story.id)
+      if (foundLike) {
+
+        return (
+          <li key={index}>
+            <StoryCard story = {story} like = {foundLike.vote} />
+          </li>
+        )
+
+      } else {
+
+        return (
+          <li key={index}>
+            <StoryCard story = {story} like = {0} />
+          </li>
+        )
+      }
+
     })
 
     return (

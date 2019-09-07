@@ -57,6 +57,10 @@ class StoryCard extends Component{
               ID: {this.props.story.id}
             </Button>
 
+            <Button variant="light">
+              Test Likes: {this.props.like}
+            </Button>
+
         </Card>
       </div>
     )
