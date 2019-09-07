@@ -12,7 +12,7 @@ class StoryCard extends Component{
     vote: 1,
     item_id: this.props.story.id
   }
-
+  // commnets out avoid warning messages
   // componentDidMount() {
   //   this.props.fetchLike(this.props.story.id);
   // }
