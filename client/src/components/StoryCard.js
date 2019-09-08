@@ -3,19 +3,13 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { likeVote } from '../actions/likeVoteAction';
-import { fetchLike } from '../actions/likeFetchAction';
 import { connect } from 'react-redux';
 
 class StoryCard extends Component{
-
   state = {
     vote: 0,
     item_id: this.props.story.id
   }
-  // commnets out avoid warning messages
-  // componentDidMount() {
-  //   this.props.fetchLike(this.props.story.id);
-  // }
 
   handleOnClick = event => {
     event.preventDefault();
@@ -24,19 +18,13 @@ class StoryCard extends Component{
     this.setState({
       vote: this.state.vote +1,
     })
-
     this.props.likeVote(this.state, valueCSRF);
-    // this.props.fetchLike(this.props.story.id)
   }
 
   render () {
 
     let currentStoryId = this.props.story.id
-    // let currentItemLike = this.props.likes.filter(like => {
-    //
-    //   currentStoryId === parseInt(like.item_id)
-    //   })
-// debugger
+
     return (
       <div>
         <Card body>
@@ -44,7 +32,6 @@ class StoryCard extends Component{
 
             <Button variant="light">
               Likes: {this.props.like + this.state.vote}
-              {/* {currentItemLike[0] ? currentItemLike[0].vote : 0 } */}
             </Button>
 
             <Button variant="light">
@@ -64,12 +51,10 @@ class StoryCard extends Component{
   }
 }
 
-
 const mapStateToProps = state => {
   return {
-    vote: state.likeVoteReducer.vote,
-    likes: state.likeVoteReducer.likes
+    vote: state.likeVoteReducer.vote
   }
 }
 
-export default connect(mapStateToProps, {likeVote, fetchLike})(StoryCard)
+export default connect(mapStateToProps, {likeVote})(StoryCard)
