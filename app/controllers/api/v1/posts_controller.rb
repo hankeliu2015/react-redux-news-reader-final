@@ -42,24 +42,6 @@ module Api
             updated_vote = @post.like + params[:vote]
             @post.update(like: updated_vote)
 
-          # when like default value was nil:
-
-          # if @post.like == nil && params[:vote] > 0
-          #   @post.update(like: params[:vote])
-          # elsif @post.like == nil && params[:vote] < 0
-          #   @post.update(like: 0)
-          # elsif @post.like > 0
-          #   vote = @post.like + params[:vote]
-          #   @post.update(like: vote)
-          # elsif @post.like == 0 && params[:vote] < 0
-          #   @post.update(like: 0)
-          # elsif @post.like == 0 && params[:vote] > 0
-          #   vote = @post.like + params[:vote]
-          #   @post.update(like: vote)
-
-          # else # before added downVote
-          #   updated_like = @post[:like] + 1
-          #   @post.update(like: updated_like)
           end
           render json: Post.find(params[:id])
         else
