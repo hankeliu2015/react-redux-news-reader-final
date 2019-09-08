@@ -1,4 +1,4 @@
-export function likeVote(votes, valueCSRF) {
+export function likeStory(votes, valueCSRF) {
 
   return dispatch => {
     dispatch({type: 'UPLOADING_VOTE'});

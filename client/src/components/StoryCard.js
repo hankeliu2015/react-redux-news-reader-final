@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
-import { likeVote } from '../actions/likeVoteAction';
+import { likeStory } from '../actions/likeStoryAction';
 import { connect } from 'react-redux';
 
 class StoryCard extends Component{
@@ -18,7 +18,7 @@ class StoryCard extends Component{
     this.setState({
       vote: this.state.vote +1,
     })
-    this.props.likeVote(this.state, valueCSRF);
+    this.props.likeStory(this.state, valueCSRF);
   }
 
   render () {
@@ -57,4 +57,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {likeVote})(StoryCard)
+export default connect(mapStateToProps, {likeStory})(StoryCard)
