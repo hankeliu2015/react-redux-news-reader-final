@@ -19,27 +19,13 @@ class Stories extends Component {
   }
 
   render() {
-    // debugger
     const list = this.props.stories.map((story, index) => {
-      // debugger
-      let foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === story.id)
-      if (foundLike) {
-
-        return (
-          <li key={index}>
-            <StoryCard story = {story} like = {foundLike.vote} />
-          </li>
-        )
-
-      } else {
-
-        return (
-          <li key={index}>
-            <StoryCard story = {story} like = {0} />
-          </li>
-        )
-      }
-
+    let foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === story.id)
+      return (
+        <li key={index}>
+          <StoryCard story = {story} like = {foundLike ? foundLike.vote : 0 } />
+        </li>
+      )
     })
 
     return (
@@ -52,7 +38,7 @@ class Stories extends Component {
 }
 
 const mapStatetoProps = state => {
-  // debugger
+
   return {
     stories: state.storyReducer.stories,
     loading: state.storyReducer.loading,
