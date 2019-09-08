@@ -16,7 +16,7 @@ class PostCard extends Component{
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
     this.setState({
-      vote: 1,
+      vote: this.state.vote + 1,
     })
     let voteValue = {vote: 1, id: this.props.post.id}
     this.props.likePost(this.props.post.id, voteValue, valueCSRF);
@@ -31,7 +31,7 @@ class PostCard extends Component{
       })
     } else {
       this.setState({
-        vote: -1,
+        vote: this.state.vote - 1,
       })
     }
     let voteValue = {vote: -1, id: this.props.post.id}
