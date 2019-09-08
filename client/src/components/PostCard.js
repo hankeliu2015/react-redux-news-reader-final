@@ -25,6 +25,7 @@ class PostCard extends Component{
   handleOnClickDownVote = event => {
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
     if (this.props.likes === 0) {
       this.setState({
         vote: 0,
@@ -39,6 +40,7 @@ class PostCard extends Component{
   }
 
   render() {
+
     return (
         <Card body border="light">
           <Card.Header>
