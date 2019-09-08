@@ -40,17 +40,19 @@ class StoryCard extends Component{
               </form>
             </Button>
 
-            <Button variant="light">
+            {/*
+              <Button variant="light">
               <form onSubmit = {this.handleOnClick}>
-                <input type="submit" value = "downVote"/>
+              <input type="submit" value = "downVote"/>
               </form>
-            </Button>
+              </Button>
+              */}
 
             {/*
-              */}
               <Button variant="light">
-                ID: {this.props.story.id}
+              ID: {this.props.story.id}
               </Button>
+              */}
         </Card>
       </div>
     )
