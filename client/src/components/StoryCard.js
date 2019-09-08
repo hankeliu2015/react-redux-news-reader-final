@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 class StoryCard extends Component{
 
   state = {
-    vote: 1,
+    vote: 0,
     item_id: this.props.story.id
   }
   // commnets out avoid warning messages
@@ -32,10 +32,10 @@ class StoryCard extends Component{
   render () {
 
     let currentStoryId = this.props.story.id
-    let currentItemLike = this.props.likes.filter(like => {
-      // debugger
-      currentStoryId === parseInt(like.item_id)
-      })
+    // let currentItemLike = this.props.likes.filter(like => {
+    //
+    //   currentStoryId === parseInt(like.item_id)
+    //   })
 // debugger
     return (
       <div>
@@ -43,7 +43,7 @@ class StoryCard extends Component{
             <Link to={`${this.props.story ? "/comments/" + this.props.story.id : 'stories'}`}> {this.props.story ? this.props.story.title : "This Story is missing"}</Link>
 
             <Button variant="light">
-              Likes: 0
+              Likes: {this.props.like + this.state.vote}
               {/* {currentItemLike[0] ? currentItemLike[0].vote : 0 } */}
             </Button>
 
@@ -53,14 +53,11 @@ class StoryCard extends Component{
               </form>
             </Button>
 
-            <Button variant="light">
+            {/*
+              <Button variant="light">
               ID: {this.props.story.id}
-            </Button>
-
-            <Button variant="light">
-              Test Likes: {this.props.like}
-            </Button>
-
+              </Button>
+              */}
         </Card>
       </div>
     )
