@@ -18,8 +18,8 @@ class PostCard extends Component{
     this.setState({
       vote: 1,
     })
-
-    this.props.likePost(this.props.post.id, this.state, valueCSRF);
+    let voteValue = {vote: 1, id: this.props.post.id}
+    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
   }
 
   handleOnClickDownVote = event => {
@@ -34,8 +34,8 @@ class PostCard extends Component{
         vote: -1,
       })
     }
-
-    this.props.likePost(this.props.post.id, this.state, valueCSRF);
+    let voteValue = {vote: -1, id: this.props.post.id}
+    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
   }
 
   render() {

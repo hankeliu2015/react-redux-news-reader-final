@@ -1,4 +1,4 @@
-export function likePost(postId, votes, valueCSRF) {
+export function likePost(postId, voteValue, valueCSRF) {
 
   return dispatch => {
     dispatch({type: 'UPLOADING_POSTLIKE'});
@@ -11,7 +11,7 @@ export function likePost(postId, votes, valueCSRF) {
         'Accept': 'application/json',
         'X-CSRF-Token': valueCSRF
       },
-      body: JSON.stringify(votes),
+      body: JSON.stringify(voteValue),
       // credentials: 'same-origin'  //might not need this.
 
       })
