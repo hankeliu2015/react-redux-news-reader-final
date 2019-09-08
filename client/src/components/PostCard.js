@@ -44,7 +44,7 @@ class PostCard extends Component{
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.props.deletePost(this.state.id, valueCSRF);
+    this.props.deletePost(this.state.id, this.state, valueCSRF);
   }
 
   render() {
@@ -52,7 +52,7 @@ class PostCard extends Component{
     return (
         <Card body border="light">
           <Card.Header>
-            Created at: {this.props.dateString}; By: {this.props.post.user.username};
+            Created at: {this.props.dateString}; By: {this.props.post.user.username}; Post Id: {this.props.post.id}
           </Card.Header>
           <Card.Title>{this.props.post.title}</Card.Title>
           <Card.Text>{this.props.post.content}</Card.Text>

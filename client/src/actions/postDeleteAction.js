@@ -1,4 +1,5 @@
-export function deletePost(postId, valueCSRF) {
+export function deletePost(postId, postValue, valueCSRF) {
+  // debugger
   return dispatch => {
     dispatch({type: 'LOADING_DELETEPOST'});
     return (
@@ -9,10 +10,11 @@ export function deletePost(postId, valueCSRF) {
           'Accept': 'application/json',
           'X-CSRF-Token': valueCSRF
         },
-        body: JSON.stringify(postId),
+        body: JSON.stringify(postValue),
       })
       .then(resp => resp.json())
       .then(post => {
+        debugger
         return dispatch({type: 'DELETING_POST', payload: post})
       })
       // .then(res => push("/posts"))
