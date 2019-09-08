@@ -5,14 +5,13 @@ export function likeVote(votes, valueCSRF) {
     return (
       fetch('http://localhost:3000/likes', {
 
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'X-CSRF-Token': valueCSRF
-      },
-      body: JSON.stringify(votes),
-      // credentials: 'same-origin'  //might not need this.
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'X-CSRF-Token': valueCSRF
+        },
+        body: JSON.stringify(votes),
 
       })
       .then(resp => resp.json())
@@ -22,5 +21,7 @@ export function likeVote(votes, valueCSRF) {
       .catch(function(error) {console.log('There has been a problem with your fetch POST operation: ', error.message);})
 
     )
+
+
   }
 }

@@ -41,10 +41,10 @@ class StoryCard extends Component{
             </Button>
 
             {/*
-              <Button variant="light">
-              ID: {this.props.story.id}
-              </Button>
               */}
+              <Button variant="light">
+                ID: {this.props.story.id}
+              </Button>
         </Card>
       </div>
     )

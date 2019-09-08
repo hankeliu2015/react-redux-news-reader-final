@@ -10,7 +10,7 @@ class LikesController < ApplicationController
   def show
     if user_signed_in?
       like = Like.find_by(item_id: params[:id])
-      if like 
+      if like
         render json: Like.find(like.id)
       end
     else
@@ -30,7 +30,9 @@ class LikesController < ApplicationController
         end
 
       else
+        # binding.pry
         if like = Like.create(like_params)
+          like.update(vote: 1)
           render json: like, status: :created
         else
           render json: like.errors, status: 400
