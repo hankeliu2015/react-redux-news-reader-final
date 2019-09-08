@@ -36,7 +36,13 @@ class StoryCard extends Component{
 
             <Button variant="light">
               <form onSubmit = {this.handleOnClick}>
-                <input type="submit" value = "Vote"/>
+                <input type="submit" value = "upVote"/>
+              </form>
+            </Button>
+
+            <Button variant="light">
+              <form onSubmit = {this.handleOnClick}>
+                <input type="submit" value = "downVote"/>
               </form>
             </Button>
 

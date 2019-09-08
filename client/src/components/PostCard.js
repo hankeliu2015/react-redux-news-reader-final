@@ -30,16 +30,25 @@ class PostCard extends Component{
           </Card.Header>
           <Card.Title>{this.props.post.title}</Card.Title>
           <Card.Text>{this.props.post.content}</Card.Text>
-          <Button variant="light">
+
+        <Button variant="light">
             <Link to={`${this.props.post ? "/postcomments/" + this.props.post.id : 'posts'}`}>
               {this.props.post ? "Add Comments" : "This Post is missing"}
             </Link>
           </Button>
+
           <Button variant="light">
             <form onSubmit = {this.handleOnClick}>
-              <input type="submit" value="Vote"/>
+              <input type="submit" value="upVote"/>
             </form>
           </Button>
+
+          <Button variant="light">
+            <form onSubmit = {this.handleOnClick}>
+              <input type="submit" value="downVote"/>
+            </form>
+          </Button>
+
           <Button variant="light">
             Likes: {this.props.post.like ? this.props.post.like + this.state.vote : 0}
           </Button>
