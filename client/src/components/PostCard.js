@@ -4,6 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { likePost } from '../actions/likePostAction';
+import { deletePost } from '../actions/postDeleteAction';
 
 class PostCard extends Component{
   state = {
@@ -39,6 +40,13 @@ class PostCard extends Component{
     this.props.likePost(this.props.post.id, voteValue, valueCSRF);
   }
 
+  handleOnClickDelete = event => {
+    event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
+    this.props.deletePost(this.props.post.id, this.state, valueCSRF);
+  }
+
   render() {
 
     return (
@@ -70,6 +78,12 @@ class PostCard extends Component{
           <Button variant="light">
             Likes: {(this.props.post.like + this.state.vote) < 0 ? 0 : (this.props.post.like + this.state.vote)}
           </Button>
+
+          <Button variant="light">
+            <form onSubmit = {this.handleOnClickDelete}>
+              <input type="submit" value="Delete Post"/>
+            </form>
+          </Button>
         </Card>
     )
   }
@@ -81,4 +95,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {likePost})(PostCard);
+export default connect(mapStateToProps, {likePost, deletePost})(PostCard);
