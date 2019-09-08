@@ -66,7 +66,7 @@ class PostCard extends Component{
           </Button>
 
           <Button variant="light">
-            Likes: {this.props.post.like ? this.props.post.like + this.state.vote : 0}
+            Likes: {this.props.post.like + this.state.vote}
           </Button>
         </Card>
     )
