@@ -49,6 +49,16 @@ module Api
         end
       end
 
+      def destroy
+        @post = Post.find(params[:id])
+        # binding.pry
+        if user_signed_in? && current_user.id == @post.user.id
+          @post.destroy
+        else
+          render json: {}, status: 401
+        end
+      end
+
       def post_params
         params.require(:post).permit(:title, :content, :like)
       end
