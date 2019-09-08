@@ -16,8 +16,24 @@ class PostCard extends Component{
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
     this.setState({
-      vote: this.state.vote +1,
+      vote: 1,
     })
+
+    this.props.likePost(this.props.post.id, this.state, valueCSRF);
+  }
+
+  handleOnClickDownVote = event => {
+    event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+    if (this.props.likes === 0) {
+      this.setState({
+        vote: 0,
+      })
+    } else {
+      this.setState({
+        vote: -1,
+      })
+    }
 
     this.props.likePost(this.props.post.id, this.state, valueCSRF);
   }
@@ -44,7 +60,7 @@ class PostCard extends Component{
           </Button>
 
           <Button variant="light">
-            <form onSubmit = {this.handleOnClick}>
+            <form onSubmit = {this.handleOnClickDownVote}>
               <input type="submit" value="downVote"/>
             </form>
           </Button>
