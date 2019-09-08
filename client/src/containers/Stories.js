@@ -43,7 +43,7 @@ const mapStatetoProps = state => {
     stories: state.storyReducer.stories,
     loading: state.storyReducer.loading,
     user: state.currentUserReducer.user,
-    allLikes: state.likeVoteReducer.allLikes
+    allLikes: state.likeStoryReducer.allLikes
   }
 }
 export default connect(mapStatetoProps, {fetchStories, currentUserFetch, likeAllOnStoriesFetch})(Stories)

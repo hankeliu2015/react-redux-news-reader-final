@@ -53,7 +53,7 @@ class StoryCard extends Component{
 
 const mapStateToProps = state => {
   return {
-    vote: state.likeVoteReducer.vote
+    vote: state.likeStoryReducer.vote
   }
 }
 

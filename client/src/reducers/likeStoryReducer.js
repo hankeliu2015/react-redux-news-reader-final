@@ -1,4 +1,4 @@
-export default function likeVoteReducer(state={vote: 0, allLikes: [], loading: false}, action) {
+export default function likeStoryReducer(state={vote: 0, allLikes: [], loading: false}, action) {
   switch(action.type) {
 
     case 'UPLOADING_VOTE':
