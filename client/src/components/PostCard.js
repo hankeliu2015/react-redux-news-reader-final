@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { likePost } from '../actions/likePostAction';
 import { deletePost } from '../actions/postDeleteAction';
+import { editPost } from '../actions/postEditAction';
 
 class PostCard extends Component{
   state = {
@@ -47,6 +48,13 @@ class PostCard extends Component{
     this.props.deletePost(this.state.id, this.state, valueCSRF);
   }
 
+  handleOnClickEdit = event => {
+    event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
+    this.props.editPost(this.state.id, this.state, valueCSRF);
+  }
+
   render() {
 
     return (
@@ -80,6 +88,12 @@ class PostCard extends Component{
           </Button>
 
           <Button variant="light">
+            <form onSubmit = {this.handleOnClickEdit}>
+              <input type="submit" value="Edit Post"/>
+            </form>
+          </Button>
+
+          <Button variant="light">
             <form onSubmit = {this.handleOnClickDelete}>
               <input type="submit" value="Delete Post"/>
             </form>
@@ -95,4 +109,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {likePost, deletePost})(PostCard);
+export default connect(mapStateToProps, {likePost, deletePost, editPost})(PostCard);

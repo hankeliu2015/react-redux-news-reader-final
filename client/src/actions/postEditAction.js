@@ -1,4 +1,4 @@
-export function deletePost(postId, postValue, valueCSRF) {
+export function editPost(postId, postValue, valueCSRF) {
   return dispatch => {
     dispatch({type: 'LOADING_DELETEPOST'});
     return (
