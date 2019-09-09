@@ -1,4 +1,4 @@
-export function deletePost(postId, postValue, valueCSRF, push) {
+export function deletePost(postId, postValue, valueCSRF) {
   // debugger
   return dispatch => {
     dispatch({type: 'LOADING_DELETEPOST'});
@@ -15,7 +15,6 @@ export function deletePost(postId, postValue, valueCSRF, push) {
       // .then(resp => resp.json())
       .then( dispatch({type: 'DELETING_POST', payload: {id: postId}})
       )
-      .then(res => push("/posts"))
       .catch(function(error) {console.log('There has been a problem with your fetch DELETE operation: ', error.message);})
     )
   }
