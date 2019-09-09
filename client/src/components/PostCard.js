@@ -22,17 +22,13 @@ class PostCard extends Component{
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    if (this.props.likes === 0) {
-      this.setState({
-        vote: 0,
-      })
+    if (this.props.post.like === 0) {
+      let voteValue = {vote: 0, id: this.props.post.id}
+      this.props.likePost(this.props.post.id, voteValue, valueCSRF);
     } else {
-      this.setState({
-        vote: this.state.vote - 1,
-      })
+      let voteValue = {vote: -1, id: this.props.post.id}
+      this.props.likePost(this.props.post.id, voteValue, valueCSRF);
     }
-    let voteValue = {vote: -1, id: this.props.post.id}
-    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
   }
 
   // handleOnClickDownVote = event => {
@@ -56,7 +52,7 @@ class PostCard extends Component{
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.props.deletePost(this.state.id, this.state, valueCSRF);
+    this.props.deletePost(this.props.post.id, this.props.post, valueCSRF);
   }
 
   handleOnClickEdit = event => {
@@ -89,13 +85,13 @@ class PostCard extends Component{
           </Button>
 
 {/*
-  // <Button variant="light">
-  //   <form onSubmit = {this.handleOnClickDownVote}>
-  //     <input type="submit" value="downVote"/>
-  //   </form>
-  // </Button>
 
   */}
+  <Button variant="light">
+    <form onSubmit = {this.handleOnClickDownVote}>
+      <input type="submit" value="downVote"/>
+    </form>
+  </Button>
 
           <Button variant="light">
             Likes: {this.props.post.like}
