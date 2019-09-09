@@ -12,11 +12,11 @@ export function deletePost(postId, postValue, valueCSRF, push) {
         },
         body: JSON.stringify(postValue),
       })
-      .then(resp => resp.json())
-      .then(post => {
-        debugger
-        return dispatch({type: 'DELETING_POST', payload: post})
-      })
+      // .then(resp => resp.json())
+      // .then(post => {
+        // debugger
+      //   return dispatch({type: 'DELETING_POST', payload: post})
+      // })
       .then(res => push("/posts"))
       .catch(function(error) {console.log('There has been a problem with your fetch DELETE operation: ', error.message);})
     )
