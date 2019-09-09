@@ -18,6 +18,23 @@ class PostCard extends Component{
     this.props.likePost(this.props.post.id, voteValue, valueCSRF, );
   }
 
+  handleOnClickDownVote = event => {
+    event.preventDefault();
+    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+
+    if (this.props.likes === 0) {
+      this.setState({
+        vote: 0,
+      })
+    } else {
+      this.setState({
+        vote: this.state.vote - 1,
+      })
+    }
+    let voteValue = {vote: -1, id: this.props.post.id}
+    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
+  }
+
   // handleOnClickDownVote = event => {
   //   event.preventDefault();
   //   let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
@@ -102,7 +119,7 @@ class PostCard extends Component{
 
 const mapStateToProps = state => {
   return {
-    likes: state.likePostReducer.likes
+    // likes: state.likePostReducer.likes
   }
 }
 
