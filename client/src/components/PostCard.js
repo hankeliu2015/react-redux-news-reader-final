@@ -52,7 +52,7 @@ class PostCard extends Component{
     event.preventDefault();
     // let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.props.editPost(this.state.id, this.state);
+    this.props.editPost(this.state.id);
   }
 
   render() {

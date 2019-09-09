@@ -1,4 +1,4 @@
-export function editPost(postId) {
+export function editPost(postId, push) {
   return (dispatch) => {
     dispatch({type: 'LOADING_SINGLE_POST'});
     return (
@@ -7,6 +7,9 @@ export function editPost(postId) {
       .then(post => {
         dispatch({type: 'FETCH_SINGLE_POST', payload: post})
       })
+      .then(res => push(`/posts/${postId}/edit`))
+      .catch(function(error) {console.log('There has been a problem with your fetch POST operation: ', error.message);})
+
     )
   }
 }
