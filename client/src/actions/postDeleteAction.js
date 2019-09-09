@@ -13,8 +13,7 @@ export function deletePost(postId, postValue, valueCSRF) {
         body: JSON.stringify(postValue),
       })
       // .then(resp => resp.json())
-      .then( dispatch({type: 'DELETING_POST', payload: {id: postId}})
-      )
+      .then( res => {dispatch({type: 'DELETING_POST', payload: postId})})
       .catch(function(error) {console.log('There has been a problem with your fetch DELETE operation: ', error.message);})
     )
   }

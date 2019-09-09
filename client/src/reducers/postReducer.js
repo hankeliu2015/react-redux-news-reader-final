@@ -23,7 +23,7 @@ export default function postReducer(state={userPosts: [], posts: [], singlePost:
       return {...state, loading:true};
 
     case 'DELETING_POST':
-      return {...state, userPosts: state.userPosts.filter(post => post.id !== action.payload.id), loading:false};
+      return {...state, posts: state.posts.filter(post => post.id !== action.payload), loading:false};
 
     default:
       return state;
