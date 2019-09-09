@@ -117,10 +117,5 @@ class PostCard extends Component{
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    // likes: state.likePostReducer.likes
-  }
-}
 
-export default connect(mapStateToProps, {likePost, deletePost, editPost})(PostCard);
+export default connect(null, {likePost, deletePost, editPost})(PostCard);
