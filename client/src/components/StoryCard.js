@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 class StoryCard extends Component{
   state = {
     vote: 0,
-    item_id: this.props.story.id
+    item_id: (this.props.story ? this.props.story.id : -1)
   }
 
   handleOnClick = event => {
@@ -23,7 +23,8 @@ class StoryCard extends Component{
 
   render () {
 
-    let currentStoryId = this.props.story.id
+    // let currentStoryId = this.props.story.id
+    let currentStoryId = (this.props.story ? this.props.story.id : -1)
 
     return (
       <div>
