@@ -50,9 +50,9 @@ class PostCard extends Component{
 
   handleOnClickEdit = event => {
     event.preventDefault();
-    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+    // let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.props.editPost(this.state.id, this.state, valueCSRF);
+    this.props.editPost(this.state.id, this.state);
   }
 
   render() {

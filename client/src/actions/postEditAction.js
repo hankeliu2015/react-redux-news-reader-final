@@ -1,19 +1,12 @@
-export function editPost(postId, postValue, valueCSRF) {
-  // return dispatch => {
-  //   dispatch({type: 'LOADING_DELETEPOST'});
-  //   return (
-  //     fetch(`http://localhost:3000/api/v1/posts/${postId}`, {
-  //       method: 'DELETE',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         'Accept': 'application/json',
-  //         'X-CSRF-Token': valueCSRF
-  //       },
-  //       body: JSON.stringify(postValue),
-  //     })
-  //     // .then(resp => resp.json())
-  //     .then( res => {dispatch({type: 'DELETING_POST', payload: postId})})
-  //     .catch(function(error) {console.log('There has been a problem with your fetch DELETE operation: ', error.message);})
-  //   )
-  // }
+export function editPost(postId) {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_SINGLE_POST'});
+    return (
+      fetch(`http://localhost:3000/api/v1/posts/${postId}`)
+      .then(resp => resp.json())
+      .then(post => {
+        dispatch({type: 'FETCH_SINGLE_POST', payload: post})
+      })
+    )
+  }
 }
