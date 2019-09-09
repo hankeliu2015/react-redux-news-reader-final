@@ -58,12 +58,10 @@ class PostCard extends Component{
   handleOnClickEdit = event => {
     event.preventDefault();
     // let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
-
     this.props.editPost(this.props.post.id, this.props.push);
   }
 
   render() {
-
     return (
         <Card body border="light">
           <Card.Header>
@@ -84,14 +82,11 @@ class PostCard extends Component{
             </form>
           </Button>
 
-{/*
-
-  */}
-  <Button variant="light">
-    <form onSubmit = {this.handleOnClickDownVote}>
-      <input type="submit" value="downVote"/>
-    </form>
-  </Button>
+          <Button variant="light">
+            <form onSubmit = {this.handleOnClickDownVote}>
+              <input type="submit" value="downVote"/>
+            </form>
+          </Button>
 
           <Button variant="light">
             Likes: {this.props.post.like}
