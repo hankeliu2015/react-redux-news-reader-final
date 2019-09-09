@@ -20,11 +20,11 @@ class PostEdit extends Component {
     })
   }
 
-  handleOnSubmit = event => {
-    event.preventDefault();
-    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
-    this.props.postUpload(this.state, valueCSRF, this.props.history.push);
-  }
+  // handleOnSubmit = event => {
+  //   event.preventDefault();
+  //   let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+  //   this.props.postUpload(this.state, valueCSRF, this.props.history.push);
+  // }
 
   render() {
     return (
