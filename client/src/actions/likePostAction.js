@@ -17,7 +17,8 @@ export function likePost(postId, voteValue, valueCSRF) {
       })
       .then(resp => resp.json())
       .then(post => {
-        dispatch({type:'FETCHING_POSTLIKE', payload: post.like})
+        console.log(post)
+        dispatch({type:'FETCHING_POSTLIKE', payload: post})
       })
       .catch(function(error) {console.log('There has been a problem with your fetch POST operation: ', error.message);})
 
