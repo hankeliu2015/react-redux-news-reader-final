@@ -20,7 +20,7 @@ class PostCard extends Component{
       vote: this.state.vote + 1,
     })
     let voteValue = {vote: 1, id: this.props.post.id}
-    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
+    this.props.likePost(this.props.post.id, voteValue, valueCSRF, );
   }
 
   handleOnClickDownVote = event => {
@@ -44,7 +44,7 @@ class PostCard extends Component{
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.props.deletePost(this.state.id, this.state, valueCSRF);
+    this.props.deletePost(this.state.id, this.state, valueCSRF, this.props.push);
   }
 
   render() {
