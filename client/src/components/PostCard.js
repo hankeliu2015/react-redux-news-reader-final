@@ -8,38 +8,32 @@ import { deletePost } from '../actions/postDeleteAction';
 import { editPost } from '../actions/postEditAction';
 
 class PostCard extends Component{
-  state = {
-      vote: 0,
-      id: this.props.post.id
-    }
 
   handleOnClick = event => {
     event.preventDefault();
     let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
 
-    this.setState({
-      vote: this.state.vote + 1,
-    })
+
     let voteValue = {vote: 1, id: this.props.post.id}
     this.props.likePost(this.props.post.id, voteValue, valueCSRF, );
   }
 
-  handleOnClickDownVote = event => {
-    event.preventDefault();
-    let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
-
-    if (this.props.likes === 0) {
-      this.setState({
-        vote: 0,
-      })
-    } else {
-      this.setState({
-        vote: this.state.vote - 1,
-      })
-    }
-    let voteValue = {vote: -1, id: this.props.post.id}
-    this.props.likePost(this.props.post.id, voteValue, valueCSRF);
-  }
+  // handleOnClickDownVote = event => {
+  //   event.preventDefault();
+  //   let valueCSRF = document.querySelector('meta[name="csrf-token"]').content;
+  //
+  //   if (this.props.likes === 0) {
+  //     this.setState({
+  //       vote: 0,
+  //     })
+  //   } else {
+  //     this.setState({
+  //       vote: this.state.vote - 1,
+  //     })
+  //   }
+  //   let voteValue = {vote: -1, id: this.props.post.id}
+  //   this.props.likePost(this.props.post.id, voteValue, valueCSRF);
+  // }
 
   handleOnClickDelete = event => {
     event.preventDefault();
@@ -77,14 +71,17 @@ class PostCard extends Component{
             </form>
           </Button>
 
-          <Button variant="light">
-            <form onSubmit = {this.handleOnClickDownVote}>
-              <input type="submit" value="downVote"/>
-            </form>
-          </Button>
+{/*
+  // <Button variant="light">
+  //   <form onSubmit = {this.handleOnClickDownVote}>
+  //     <input type="submit" value="downVote"/>
+  //   </form>
+  // </Button>
+
+  */}
 
           <Button variant="light">
-            Likes: {(this.props.post.like + this.state.vote) < 0 ? 0 : (this.props.post.like + this.state.vote)}
+            Likes: {this.props.post.like}
           </Button>
 
           <Button variant="light">
