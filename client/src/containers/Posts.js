@@ -24,7 +24,7 @@ class Posts extends Component {
 
       return(
         <div key={post.id}>
-          <PostCard post={post} postDate={postDate} dateString = {dateString}/>
+          <PostCard post={post} postDate={postDate} dateString = {dateString} push = {this.props.history.push}/>
         </div>
       )
     })
