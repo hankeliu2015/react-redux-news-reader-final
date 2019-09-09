@@ -25,8 +25,11 @@ export default function postReducer(state={userPosts: [], posts: [], singlePost:
     case 'DELETING_POST':
       return {...state, posts: state.posts.filter(post => post.id !== action.payload), loading:false};
 
+    case 'UPLOADING_POSTLIKE':
+      return {...state, loading:true};
+
     case 'FETCHING_POSTLIKE':
-      
+      // debugger
       return {...state, posts: state.posts.map(post => post.id === action.payload.id ? action.payload : post), loading:false};
 
     default:
