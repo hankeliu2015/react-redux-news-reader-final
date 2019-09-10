@@ -92,11 +92,14 @@ class PostCard extends Component{
             Likes: {this.props.post.like}
           </Button>
 
-          <Button variant="light">
-            <form onSubmit = {this.handleOnClickEdit}>
-              <input type="submit" value="Edit Post"/>
-            </form>
-          </Button>
+{/*
+
+  <Button variant="light">
+  <form onSubmit = {this.handleOnClickEdit}>
+  <input type="submit" value="Edit Post"/>
+  </form>
+  </Button>
+  */}
 
           <Button variant="light">
             <form onSubmit = {this.handleOnClickDelete}>
