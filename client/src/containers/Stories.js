@@ -20,7 +20,11 @@ class Stories extends Component {
 
   render() {
     const list = this.props.stories.map((story, index) => {
-    let foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === (story ? story.id : -1))
+
+      let foundLike = 0;
+      if (this.props.allLikes === true ) {
+        foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === (story ? story.id : -1))
+      }
       return (
         <li key={index}>
           <StoryCard story = {story} like = {foundLike ? foundLike.vote : 0 } />
