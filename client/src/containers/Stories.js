@@ -12,10 +12,12 @@ import { likeAllOnStoriesFetch } from '../actions/likeAllOnStoriesFetchAction';
 
 class Stories extends Component {
 
-  componentDidMount() {
+  componentDidMount(current_user) {
     this.props.fetchStories();
-    this.props.currentUserFetch();
-    this.props.likeAllOnStoriesFetch();
+    if (current_user) {
+      this.props.currentUserFetch();
+      this.props.likeAllOnStoriesFetch();
+    }
   }
 
   render() {
