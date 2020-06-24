@@ -19,22 +19,29 @@ class Stories extends Component {
   }
 
   render() {
+    const currentUserName = this.props.user.username
     const list = this.props.stories.map((story, index) => {
+      if(currentUserName){
+        let foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === (story ? story.id : -1))
 
-      let foundLike = 0;
-      if (this.props.allLikes === true ) {
-        foundLike = this.props.allLikes.find(like => parseInt(like.item_id) === (story ? story.id : -1))
+        return (
+          <li key={index}>
+            <StoryCard story = {story} like = {foundLike ? foundLike.vote : 0 } />
+          </li>
+        )
+      } else {
+        let foundLike = 0;
+        return (
+          <li key={index}>
+            <StoryCard story = {story} like = {foundLike} />
+          </li>
+        )
       }
-      return (
-        <li key={index}>
-          <StoryCard story = {story} like = {foundLike ? foundLike.vote : 0 } />
-        </li>
-      )
     })
 
     return (
       <div>
-        <Header username = {this.props.user.username}/>
+        <Header username = {currentUserName}/>
         <StoriesList list={list} loading={this.props.loading} />
       </div>
     )
